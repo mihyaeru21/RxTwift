@@ -1,0 +1,26 @@
+PODS:
+  - CryptoSwift (0.2.2)
+  - Nimble (3.0.0)
+  - Quick (0.8.0)
+  - RxSwift (2.1.0)
+  - RxTwift (0.1.0):
+    - CryptoSwift (~> 0.2)
+    - RxSwift (~> 2.0)
+
+DEPENDENCIES:
+  - Nimble (= 3.0.0)
+  - Quick (~> 0.8.0)
+  - RxTwift (from `../`)
+
+EXTERNAL SOURCES:
+  RxTwift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CryptoSwift: d382228d6301c09474132417878a741c2a2e68cd
+  Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
+  Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
+  RxSwift: 110fb07f81c17c2c3b3254d168363057b1880d18
+  RxTwift: fc66334faf9ffb0bbf93792a5d37ccd4d53cbd95
+
+COCOAPODS: 0.39.0

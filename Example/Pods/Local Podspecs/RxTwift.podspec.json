@@ -1,0 +1,33 @@
+{
+  "name": "RxTwift",
+  "version": "0.1.0",
+  "summary": "A short description of RxTwift.",
+  "description": "",
+  "homepage": "https://github.com/mihyaeru21/RxTwift",
+  "license": "MIT",
+  "authors": {
+    "Mihyaeru": "mihyaeru21@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/mihyaeru21/RxTwift.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "RxTwift": [
+      "Pod/Assets/*.png"
+    ]
+  },
+  "dependencies": {
+    "RxSwift": [
+      "~> 2.0"
+    ],
+    "CryptoSwift": [
+      "~> 0.2"
+    ]
+  }
+}

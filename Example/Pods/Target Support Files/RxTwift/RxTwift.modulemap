@@ -1,0 +1,6 @@
+framework module RxTwift {
+  umbrella header "RxTwift-umbrella.h"
+
+  export *
+  module * { export * }
+}
