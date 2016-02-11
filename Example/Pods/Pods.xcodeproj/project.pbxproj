@@ -176,6 +176,7 @@
 		A3F29219EBC3931EF5E34745EA1C195E /* AES+Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385EE7B55D560EBD70EDFE42B35739D2 /* AES+Foundation.swift */; };
 		A4EE71A9FACB78456A2AE713A28698F2 /* Observable+Aggregate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EE4BDE5CFDAB3BC82EE5E760CD3FE6 /* Observable+Aggregate.swift */; };
 		A5295502DFBE007C66D6599525798D92 /* ReplaySubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220AB33DABB39252F699E41E01FDF090 /* ReplaySubject.swift */; };
+		A59D233652EC51B6FAB8B877 /* RxTwiftOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59D2BEE78A0AE12500DC761 /* RxTwiftOAuth.swift */; };
 		A5E3F96DCACFC3BBA576842DD5211B3A /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E4B9F7650D3BBDA0A792F4F3F3DCEB /* DSL.swift */; };
 		A6AB348C69C727114377DEA4C876114E /* DisposeBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB9C95E705AD3D4C33981F656A1453A /* DisposeBase.swift */; };
 		A8827999A6A2C2FF5003F36DE03EA2E3 /* Zip.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832ABC8A309FED564612CCB9D12D247 /* Zip.swift */; };
@@ -186,7 +187,6 @@
 		B0008006DD2514D2C1FF7929996AD47C /* Take.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901C92DB4DB6E7C372DE9F95B3B6C65F /* Take.swift */; };
 		B0A26F58BA3E6222E50AE5AC883B8EAF /* DSL.m in Sources */ = {isa = PBXBuildFile; fileRef = DAED71BA04C1515E7235A96AB682E6EE /* DSL.m */; };
 		B14DA62EF86285B679E77AD9061660DC /* ScheduledDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422B5CE5993E34F528A28C89D8678D93 /* ScheduledDisposable.swift */; };
-		B2A19A19FE39C47A61623C785FCA0827 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436E673BB75E9F0F7F461F56A8CF75D0 /* ReplaceMe.swift */; };
 		B30C38CA4B4C9F57AFFF64B09ED4F066 /* InvocableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4849D7B065E32F1DDCFEE4C189EDED9 /* InvocableType.swift */; };
 		B331A0FFD44BD887F45E8F304573684E /* AnonymousInvocable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5CA618CC2A914394AF5DD03D35C29E /* AnonymousInvocable.swift */; };
 		B41E8E775408ACE233F29CE93388B270 /* Contain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C7BDC3F1A126CBD7763FCBDA999D10 /* Contain.swift */; };
@@ -440,7 +440,6 @@
 		422B5CE5993E34F528A28C89D8678D93 /* ScheduledDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ScheduledDisposable.swift; path = RxSwift/Disposables/ScheduledDisposable.swift; sourceTree = "<group>"; };
 		423ABF1BD84A2189B67AD121C8219D76 /* ImmediateSchedulerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImmediateSchedulerType.swift; path = RxSwift/ImmediateSchedulerType.swift; sourceTree = "<group>"; };
 		434F6C14CF2EADB5E4497BC841C543F2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		436E673BB75E9F0F7F461F56A8CF75D0 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
 		437862C4BDEEA4720E23FEAFC014F82E /* TakeUntil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TakeUntil.swift; path = RxSwift/Observables/Implementations/TakeUntil.swift; sourceTree = "<group>"; };
 		4483477ABD4EEFD72434B228A31B5305 /* RxTwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxTwift-prefix.pch"; sourceTree = "<group>"; };
 		466699EF5299E2A262B258240460A5D8 /* CryptoSwift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CryptoSwift-prefix.pch"; sourceTree = "<group>"; };
@@ -562,6 +561,7 @@
 		A4D60DB60CC221466508663098DFF15E /* SchedulerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SchedulerType.swift; path = RxSwift/SchedulerType.swift; sourceTree = "<group>"; };
 		A4FEE2A374DE139AA1D8A9CF50689BE2 /* Debug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Debug.swift; path = RxSwift/Observables/Implementations/Debug.swift; sourceTree = "<group>"; };
 		A59C8FA2C8A8EC5B2E2AB25C19C73F76 /* OperationQueueScheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OperationQueueScheduler.swift; path = RxSwift/Schedulers/OperationQueueScheduler.swift; sourceTree = "<group>"; };
+		A59D2BEE78A0AE12500DC761 /* RxTwiftOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftOAuth.swift; sourceTree = "<group>"; };
 		A6132FEBB35A75A98AEA0FAE6BAD082E /* ExampleHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleHooks.swift; path = Quick/Hooks/ExampleHooks.swift; sourceTree = "<group>"; };
 		A65EBEF1375D79349067D6AD0C3E2029 /* MD5.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MD5.swift; path = Sources/CryptoSwift/MD5.swift; sourceTree = "<group>"; };
 		A9422FA0D409E8FF9159AFE5F76BB580 /* Authenticator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Authenticator.swift; path = Sources/CryptoSwift/Authenticator.swift; sourceTree = "<group>"; };
@@ -806,7 +806,7 @@
 		340C63350BEA803891EA500C3A37748D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				436E673BB75E9F0F7F461F56A8CF75D0 /* ReplaceMe.swift */,
+				A59D2BEE78A0AE12500DC761 /* RxTwiftOAuth.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1791,8 +1791,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2A19A19FE39C47A61623C785FCA0827 /* ReplaceMe.swift in Sources */,
 				1636E2C94BCB8158A380F812D0B4FE88 /* RxTwift-dummy.m in Sources */,
+				A59D233652EC51B6FAB8B877 /* RxTwiftOAuth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
