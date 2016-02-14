@@ -1,6 +1,6 @@
 # RxTwift
 
-[![CI Status](http://img.shields.io/travis/Mihyaeru/RxTwift.svg?style=flat)](https://travis-ci.org/Mihyaeru/RxTwift)
+[![CI Status](http://img.shields.io/travis/mihyaeru21/RxTwift.svg?style=flat)](https://travis-ci.org/mihyaeru21/RxTwift)
 [![Version](https://img.shields.io/cocoapods/v/RxTwift.svg?style=flat)](http://cocoapods.org/pods/RxTwift)
 [![License](https://img.shields.io/cocoapods/l/RxTwift.svg?style=flat)](http://cocoapods.org/pods/RxTwift)
 [![Platform](https://img.shields.io/cocoapods/p/RxTwift.svg?style=flat)](http://cocoapods.org/pods/RxTwift)
