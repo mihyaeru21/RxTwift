@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EDBD0B03F17BDDB5AE3038883CF96BA8"
-               BlueprintName = "RxTwift"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "RxTwift.framework">
+               BuildableIdentifier = 'primary'
+               BlueprintIdentifier = '239D0328D9D087006CA6C801'
+               BlueprintName = 'RxTwift'
+               ReferencedContainer = 'container:Pods.xcodeproj'
+               BuildableName = 'RxTwift.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

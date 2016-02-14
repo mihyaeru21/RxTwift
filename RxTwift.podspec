@@ -38,4 +38,5 @@ Pod::Spec.new do |s|
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency 'RxSwift', '~> 2.0'
   s.dependency 'CryptoSwift', '~> 0.2'
+  s.dependency 'ObjectMapper', '~> 1.1'
 end

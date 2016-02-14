@@ -85,6 +85,7 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-RxTwift_Tests/CryptoSwift.framework"
+  install_framework "Pods-RxTwift_Tests/ObjectMapper.framework"
   install_framework "Pods-RxTwift_Tests/RxSwift.framework"
   install_framework "Pods-RxTwift_Tests/RxTwift.framework"
   install_framework "Pods-RxTwift_Tests/Nimble.framework"
@@ -92,6 +93,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-RxTwift_Tests/CryptoSwift.framework"
+  install_framework "Pods-RxTwift_Tests/ObjectMapper.framework"
   install_framework "Pods-RxTwift_Tests/RxSwift.framework"
   install_framework "Pods-RxTwift_Tests/RxTwift.framework"
   install_framework "Pods-RxTwift_Tests/Nimble.framework"

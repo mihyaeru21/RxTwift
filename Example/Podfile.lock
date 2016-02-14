@@ -1,10 +1,12 @@
 PODS:
-  - CryptoSwift (0.2.2)
+  - CryptoSwift (0.2.3)
   - Nimble (3.0.0)
+  - ObjectMapper (1.1.2)
   - Quick (0.8.0)
   - RxSwift (2.1.0)
   - RxTwift (0.1.0):
     - CryptoSwift (~> 0.2)
+    - ObjectMapper (~> 1.1)
     - RxSwift (~> 2.0)
 
 DEPENDENCIES:
@@ -17,10 +19,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CryptoSwift: d382228d6301c09474132417878a741c2a2e68cd
+  CryptoSwift: b2bf37b8e7cc6d682ef3365cb966bc5ae5174aa5
   Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
+  ObjectMapper: 148765647481443b1a18983b4ac8ec3189cbce35
   Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
   RxSwift: 110fb07f81c17c2c3b3254d168363057b1880d18
-  RxTwift: fc66334faf9ffb0bbf93792a5d37ccd4d53cbd95
+  RxTwift: 2fc675ab1b0912dd338b4be5b8f002d988913d4a
 
 COCOAPODS: 0.39.0

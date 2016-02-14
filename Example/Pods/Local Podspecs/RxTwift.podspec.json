@@ -28,6 +28,9 @@
     ],
     "CryptoSwift": [
       "~> 0.2"
+    ],
+    "ObjectMapper": [
+      "~> 1.1"
     ]
   }
 }
