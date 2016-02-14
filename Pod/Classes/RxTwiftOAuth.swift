@@ -68,14 +68,14 @@ public class RxTwiftOAuth {
 
     private func createBaseString(method: String, url: String, params: [String: String]) -> String? {
         guard let
-            encodedUrl = url.percentEncodedString,
-            encodedParams = params.map({ key, value in "\(key)=\(value)" }).sort().joinWithSeparator("&").percentEncodedString
+            encodedUrl = url.percentEncodedForOAuth,
+            encodedParams = params.map({ key, value in "\(key)=\(value)" }).sort().joinWithSeparator("&").percentEncodedForOAuth
             else { return nil }
         return "\(method)&\(encodedUrl)&\(encodedParams)"
     }
 
     private func createSignature(base: String, key: String) -> String? {
         let signature = try! Authenticator.HMAC(key: Array(key.utf8), variant: .sha1).authenticate(Array(base.utf8))
-        return NSData(bytes: signature).base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0)).percentEncodedString
+        return NSData(bytes: signature).base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0)).percentEncodedForOAuth
     }
 }

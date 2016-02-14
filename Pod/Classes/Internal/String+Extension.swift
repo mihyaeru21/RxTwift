@@ -9,14 +9,24 @@
 import Foundation
 
 // http://oauth.net/core/1.0a/#encoding_parameters
-private let allowedCharacters: NSCharacterSet = {
+private let allowedCharactersForOAuth: NSCharacterSet = {
     let set = NSMutableCharacterSet.alphanumericCharacterSet()
     set.addCharactersInString("-._~")
     return set
 }()
 
+private let allowedCharactersForParams: NSCharacterSet = {
+    let set = NSMutableCharacterSet.alphanumericCharacterSet()
+    set.addCharactersInString("-._")
+    return set
+}()
+
 internal extension String {
-    var percentEncodedString: String? {
-        return self.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacters)
+    var percentEncodedForOAuth: String? {
+        return self.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharactersForOAuth)
+    }
+
+    var percentEncodedForParams: String? {
+        return self.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharactersForParams)
     }
 }

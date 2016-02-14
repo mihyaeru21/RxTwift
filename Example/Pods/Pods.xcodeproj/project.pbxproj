@@ -262,6 +262,8 @@
 		F117CAB61C6C6D20005A3BE2 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117CAB51C6C6D20005A3BE2 /* Random.swift */; };
 		F117CAB81C6C6ECD005A3BE2 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117CAB71C6C6ECD005A3BE2 /* Dictionary+Extension.swift */; };
 		F117CABA1C6C7BC8005A3BE2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117CAB91C6C7BC8005A3BE2 /* String+Extension.swift */; };
+		F117CABC1C6F4B22005A3BE2 /* RxTwiftClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F117CABB1C6F4B22005A3BE2 /* RxTwiftClient.swift */; };
+		F19902EA1C6F6DEE00A212A0 /* RxTwiftRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19902E91C6F6DEE00A212A0 /* RxTwiftRequest.swift */; };
 		F1C52120572DA13024394BDFB17F4D40 /* Concat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518C502DC393BC24E1694B70EFD53E82 /* Concat.swift */; };
 		F1D4A8A1FC68EFA7F45945908D70A352 /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AE137FF648A1FE0EC5E0920A460CB5 /* BeNil.swift */; };
 		F4B002D13BBB0CEA1F0CA863A0D675D9 /* Multicast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A0998D2356A76FC6275BE6709ACAAD /* Multicast.swift */; };
@@ -665,7 +667,9 @@
 		F117CAB51C6C6D20005A3BE2 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		F117CAB71C6C6ECD005A3BE2 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
 		F117CAB91C6C7BC8005A3BE2 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		F117CABB1C6F4B22005A3BE2 /* RxTwiftClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftClient.swift; sourceTree = "<group>"; };
 		F12367A2D77E75C5E327BF48B9BCF494 /* NSData+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSData+Extension.swift"; path = "Sources/CryptoSwift/Foundation/NSData+Extension.swift"; sourceTree = "<group>"; };
+		F19902E91C6F6DEE00A212A0 /* RxTwiftRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftRequest.swift; sourceTree = "<group>"; };
 		F314C8A2F0E89758ADBF035883B045CF /* Rabbit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Rabbit.swift; path = Sources/CryptoSwift/Rabbit.swift; sourceTree = "<group>"; };
 		F33BE572208199ADF04DEF2A4DA49357 /* Nimble-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-umbrella.h"; sourceTree = "<group>"; };
 		F36A0B58845837B5FA54E2A8CF4F6FE3 /* Window.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Window.swift; path = RxSwift/Observables/Implementations/Window.swift; sourceTree = "<group>"; };
@@ -815,7 +819,9 @@
 			isa = PBXGroup;
 			children = (
 				F117CAB21C6C6B27005A3BE2 /* Internal */,
+				F117CABB1C6F4B22005A3BE2 /* RxTwiftClient.swift */,
 				A59D2BEE78A0AE12500DC761 /* RxTwiftOAuth.swift */,
+				F19902E91C6F6DEE00A212A0 /* RxTwiftRequest.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1812,9 +1818,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F117CAB61C6C6D20005A3BE2 /* Random.swift in Sources */,
+				F117CABC1C6F4B22005A3BE2 /* RxTwiftClient.swift in Sources */,
 				F117CAB41C6C6BB5005A3BE2 /* Timestamp.swift in Sources */,
 				1636E2C94BCB8158A380F812D0B4FE88 /* RxTwift-dummy.m in Sources */,
 				A59D233652EC51B6FAB8B877 /* RxTwiftOAuth.swift in Sources */,
+				F19902EA1C6F6DEE00A212A0 /* RxTwiftRequest.swift in Sources */,
 				F117CABA1C6C7BC8005A3BE2 /* String+Extension.swift in Sources */,
 				F117CAB81C6C6ECD005A3BE2 /* Dictionary+Extension.swift in Sources */,
 			);
