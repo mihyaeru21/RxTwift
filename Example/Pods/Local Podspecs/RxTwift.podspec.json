@@ -1,8 +1,8 @@
 {
   "name": "RxTwift",
   "version": "0.1.0",
-  "summary": "A short description of RxTwift.",
-  "description": "",
+  "summary": "A type safe Twitter API client constructed on RxSwift.",
+  "description": "A type safe Twitter API client constructed on RxSwift.\nIt is written in pure Swift.",
   "homepage": "https://github.com/mihyaeru21/RxTwift",
   "license": "MIT",
   "authors": {
@@ -29,8 +29,11 @@
     "CryptoSwift": [
       "~> 0.2"
     ],
-    "ObjectMapper": [
-      "~> 1.1"
+    "Argo": [
+      "~> 2.2"
+    ],
+    "Curry": [
+      "~> 1.4"
     ]
   }
 }
