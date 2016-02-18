@@ -302,7 +302,21 @@
 		EF30F96F27648926055740941E299C2E /* VirtualTimeScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66052A310E1C5B6765B0823B72C14C40 /* VirtualTimeScheduler.swift */; };
 		F055583149C7365EA16C65E6D8ED8EB9 /* ExampleMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD003480B42D0D442162FCB2156DC04 /* ExampleMetadata.swift */; };
 		F10FD3129985704FA1610F84FB98EDF5 /* Stringers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984E7BA075F276BA8D918D656121B29F /* Stringers.swift */; };
+		F1547D791C75C3E80060DBEF /* RxTwiftUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1547D781C75C3E80060DBEF /* RxTwiftUser.swift */; };
+		F1547D7B1C75CC300060DBEF /* RxTwiftTweetEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1547D7A1C75CC300060DBEF /* RxTwiftTweetEntities.swift */; };
+		F1547D7D1C75CCAD0060DBEF /* RxTwiftHashtag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1547D7C1C75CCAD0060DBEF /* RxTwiftHashtag.swift */; };
+		F1547D7F1C75CE570060DBEF /* RxTwiftMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1547D7E1C75CE570060DBEF /* RxTwiftMedium.swift */; };
+		F1547D811C75D4AA0060DBEF /* RxTwiftSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1547D801C75D4AA0060DBEF /* RxTwiftSize.swift */; };
+		F1547D831C75F1260060DBEF /* RxTwiftUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1547D821C75F1250060DBEF /* RxTwiftUrl.swift */; };
+		F1547D851C75F3180060DBEF /* RxTwiftUserMention.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1547D841C75F3180060DBEF /* RxTwiftUserMention.swift */; };
+		F1547D871C75F6AF0060DBEF /* RxTwiftSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1547D861C75F6AF0060DBEF /* RxTwiftSymbol.swift */; };
+		F1547D891C7615F10060DBEF /* RxTwiftUserEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1547D881C7615F10060DBEF /* RxTwiftUserEntities.swift */; };
+		F1547D8B1C761DD20060DBEF /* RxTwiftPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1547D8A1C761DD20060DBEF /* RxTwiftPlace.swift */; };
 		F19F371AAA7DD83795BABB07100C9904 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A7A1C520B639D90B29877A33E81A6 /* JSON.swift */; };
+		F1CD30581C7347DC004121DD /* RxTwiftTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD30571C7347DC004121DD /* RxTwiftTweet.swift */; };
+		F1CD305A1C734897004121DD /* RxTwiftContributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD30591C734897004121DD /* RxTwiftContributor.swift */; };
+		F1CD305E1C734952004121DD /* RxTwiftCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD305D1C734952004121DD /* RxTwiftCoordinate.swift */; };
+		F1CD30601C734BAA004121DD /* RxTwiftId.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD305F1C734BAA004121DD /* RxTwiftId.swift */; };
 		F1D4A8A1FC68EFA7F45945908D70A352 /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B73F471BB7E60F7D954DCB19240C33 /* BeNil.swift */; };
 		F23946D3C178FA99FA0F35D98DA65571 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B441C1BDB7ABD5556A738EF86FE4ABB /* RxSwift.framework */; };
 		F5187C07E715E26EA89E596F39778CD0 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B6042C08782EEC21C5561F33E3E82D /* Queue.swift */; };
@@ -782,6 +796,20 @@
 		EE9582ACD0AD803A43275293702AA9AB /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF940C71A33BAD521238E8389E98C645 /* BeginWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeginWith.swift; path = Nimble/Matchers/BeginWith.swift; sourceTree = "<group>"; };
 		F07BA8B14E0E245C34273923BA6FFD01 /* BitExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BitExtension.swift; path = Sources/CryptoSwift/BitExtension.swift; sourceTree = "<group>"; };
+		F1547D781C75C3E80060DBEF /* RxTwiftUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftUser.swift; sourceTree = "<group>"; };
+		F1547D7A1C75CC300060DBEF /* RxTwiftTweetEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftTweetEntities.swift; sourceTree = "<group>"; };
+		F1547D7C1C75CCAD0060DBEF /* RxTwiftHashtag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftHashtag.swift; sourceTree = "<group>"; };
+		F1547D7E1C75CE570060DBEF /* RxTwiftMedium.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftMedium.swift; sourceTree = "<group>"; };
+		F1547D801C75D4AA0060DBEF /* RxTwiftSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftSize.swift; sourceTree = "<group>"; };
+		F1547D821C75F1250060DBEF /* RxTwiftUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftUrl.swift; sourceTree = "<group>"; };
+		F1547D841C75F3180060DBEF /* RxTwiftUserMention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftUserMention.swift; sourceTree = "<group>"; };
+		F1547D861C75F6AF0060DBEF /* RxTwiftSymbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftSymbol.swift; sourceTree = "<group>"; };
+		F1547D881C7615F10060DBEF /* RxTwiftUserEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftUserEntities.swift; sourceTree = "<group>"; };
+		F1547D8A1C761DD20060DBEF /* RxTwiftPlace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftPlace.swift; sourceTree = "<group>"; };
+		F1CD30571C7347DC004121DD /* RxTwiftTweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftTweet.swift; sourceTree = "<group>"; };
+		F1CD30591C734897004121DD /* RxTwiftContributor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftContributor.swift; sourceTree = "<group>"; };
+		F1CD305D1C734952004121DD /* RxTwiftCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftCoordinate.swift; sourceTree = "<group>"; };
+		F1CD305F1C734BAA004121DD /* RxTwiftId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftId.swift; sourceTree = "<group>"; };
 		F345019B3C3773A4A485A8F10C7D8296 /* SynchronizedUnsubscribeType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SynchronizedUnsubscribeType.swift; path = RxSwift/Concurrency/SynchronizedUnsubscribeType.swift; sourceTree = "<group>"; };
 		F3AB7A75BBF686813DE401E893F9383A /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Nimble/DSL.swift; sourceTree = "<group>"; };
 		F572893F22A4E7EBD64EA46BC04EE416 /* Pods-RxTwift_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RxTwift_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -1182,10 +1210,11 @@
 		AC1FA617277869606A448D7EF35D9EE9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				49387CED091D16C0D2916F5749FDEFF4 /* Internal */,
+				F1CD30561C73474D004121DD /* Objects */,
 				C84D23AE3EFC932E9E1A21DC07FEC530 /* RxTwiftClient.swift */,
 				13F3C36CC2F1E2818445DE55D529B410 /* RxTwiftOAuth.swift */,
 				CBE2DCC629D904C54D1FF0C73CF7BBCF /* RxTwiftRequest.swift */,
-				49387CED091D16C0D2916F5749FDEFF4 /* Internal */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1437,6 +1466,27 @@
 				C021C0CCD7D111FF141043CAD3EFD9D5 /* Support Files */,
 			);
 			path = Quick;
+			sourceTree = "<group>";
+		};
+		F1CD30561C73474D004121DD /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				F1CD30591C734897004121DD /* RxTwiftContributor.swift */,
+				F1CD305D1C734952004121DD /* RxTwiftCoordinate.swift */,
+				F1547D7C1C75CCAD0060DBEF /* RxTwiftHashtag.swift */,
+				F1CD305F1C734BAA004121DD /* RxTwiftId.swift */,
+				F1547D7E1C75CE570060DBEF /* RxTwiftMedium.swift */,
+				F1547D8A1C761DD20060DBEF /* RxTwiftPlace.swift */,
+				F1547D801C75D4AA0060DBEF /* RxTwiftSize.swift */,
+				F1547D861C75F6AF0060DBEF /* RxTwiftSymbol.swift */,
+				F1CD30571C7347DC004121DD /* RxTwiftTweet.swift */,
+				F1547D7A1C75CC300060DBEF /* RxTwiftTweetEntities.swift */,
+				F1547D821C75F1250060DBEF /* RxTwiftUrl.swift */,
+				F1547D781C75C3E80060DBEF /* RxTwiftUser.swift */,
+				F1547D881C7615F10060DBEF /* RxTwiftUserEntities.swift */,
+				F1547D841C75F3180060DBEF /* RxTwiftUserMention.swift */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 		FEE7228D3A3652F763982D6CDC796C3F /* Pods-RxTwift_Example */ = {
@@ -1926,14 +1976,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1547D871C75F6AF0060DBEF /* RxTwiftSymbol.swift in Sources */,
+				F1547D811C75D4AA0060DBEF /* RxTwiftSize.swift in Sources */,
 				9FEE1684C67EC36510204E456E72068E /* Dictionary+Extension.swift in Sources */,
 				BD49D0C09E4B326644A35DAF6DE70395 /* Random.swift in Sources */,
+				F1547D7D1C75CCAD0060DBEF /* RxTwiftHashtag.swift in Sources */,
+				F1547D791C75C3E80060DBEF /* RxTwiftUser.swift in Sources */,
+				F1CD305A1C734897004121DD /* RxTwiftContributor.swift in Sources */,
+				F1547D831C75F1260060DBEF /* RxTwiftUrl.swift in Sources */,
+				F1CD305E1C734952004121DD /* RxTwiftCoordinate.swift in Sources */,
+				F1CD30581C7347DC004121DD /* RxTwiftTweet.swift in Sources */,
+				F1547D8B1C761DD20060DBEF /* RxTwiftPlace.swift in Sources */,
+				F1547D7F1C75CE570060DBEF /* RxTwiftMedium.swift in Sources */,
+				F1547D891C7615F10060DBEF /* RxTwiftUserEntities.swift in Sources */,
 				19D6E221C73ED3A52A89F8625484F72A /* RxTwift-dummy.m in Sources */,
 				95DB0768C0E9AF58205912F98C1F323D /* RxTwiftClient.swift in Sources */,
 				4AC55BEE405ABC38534BE638EA414516 /* RxTwiftOAuth.swift in Sources */,
+				F1547D7B1C75CC300060DBEF /* RxTwiftTweetEntities.swift in Sources */,
 				CFA0658F7951DA743DB1140E6FEC0C9F /* RxTwiftRequest.swift in Sources */,
 				969F43FE7CE7834BDA3F50B8956258B4 /* String+Extension.swift in Sources */,
 				E723F58CB0C004A40E379DA88006CA9F /* Timestamp.swift in Sources */,
+				F1547D851C75F3180060DBEF /* RxTwiftUserMention.swift in Sources */,
+				F1CD30601C734BAA004121DD /* RxTwiftId.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
