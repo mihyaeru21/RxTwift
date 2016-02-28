@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal class Random : RxTwiftRandomProtocol {
+internal class Random : RandomProtocol {
     var nonce: String {
         return NSUUID().UUIDString
     }

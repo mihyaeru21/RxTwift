@@ -1,5 +1,5 @@
 //
-//  RxTwiftCoordinate.swift
+//  Coordinate.swift
 //  Pods
 //
 //  Created by Mihyaeru on 2/16/16.
@@ -11,7 +11,7 @@ import Argo
 import Curry
 
 // https://dev.twitter.com/overview/api/tweets#obj-coordinates
-public class RxTwiftCoordinate {
+public class Coordinate {
     public let coordinates: [Float]
     public let type:        String
 
@@ -24,14 +24,14 @@ public class RxTwiftCoordinate {
     }
 }
 
-public extension RxTwiftCoordinate {
+public extension Coordinate {
     public var lat: Float? { return self.coordinates.first }
     public var lng: Float? { return self.coordinates.last }
 }
 
-extension RxTwiftCoordinate : Decodable {
-    public static func decode(json: JSON) -> Decoded<RxTwiftCoordinate> {
-        return curry(RxTwiftCoordinate.init)
+extension Coordinate : Decodable {
+    public static func decode(json: JSON) -> Decoded<Coordinate> {
+        return curry(Coordinate.init)
             <^> json <|| "coordinates"
             <*> json <|  "type"
     }

@@ -1,5 +1,5 @@
 //
-//  RxTwiftUserEntities.swift
+//  UserEntities.swift
 //  Pods
 //
 //  Created by Mihyaeru on 2/19/16.
@@ -10,10 +10,10 @@ import Foundation
 import Argo
 import Curry
 
-public class RxTwiftUserEntities {
+public class UserEntities {
     public class Urls : Decodable {
-        public let urls: [RxTwiftUrl]
-        public init(urls: [RxTwiftUrl]) {
+        public let urls: [Url]
+        public init(urls: [Url]) {
             self.urls = urls
         }
 
@@ -35,9 +35,9 @@ public class RxTwiftUserEntities {
     }
 }
 
-extension RxTwiftUserEntities : Decodable {
-    public static func decode(json: JSON) -> Decoded<RxTwiftUserEntities> {
-        return curry(RxTwiftUserEntities.init)
+extension UserEntities : Decodable {
+    public static func decode(json: JSON) -> Decoded<UserEntities> {
+        return curry(UserEntities.init)
             <^> json <|  "description"
             <*> json <|? "url"
     }

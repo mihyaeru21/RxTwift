@@ -1,5 +1,5 @@
 //
-//  RxTwiftId.swift
+//  Id.swift
 //  Pods
 //
 //  Created by Mihyaeru on 2/16/16.
@@ -10,7 +10,7 @@ import Foundation
 import Argo
 import Curry
 
-public class RxTwiftId {
+public class Id {
     public let id: Int64
     public let idStr: String
 
@@ -23,9 +23,9 @@ public class RxTwiftId {
     }
 }
 
-extension RxTwiftId : Decodable {
-    public static func decode(json: JSON) -> Decoded<RxTwiftId> {
-        return curry(RxTwiftId.init)
+extension Id : Decodable {
+    public static func decode(json: JSON) -> Decoded<Id> {
+        return curry(Id.init)
             <^> json <| "id"
             <*> json <| "id_str"
     }

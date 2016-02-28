@@ -1,5 +1,5 @@
 //
-//  RxTwiftRequest.swift
+//  Request.swift
 //  Pods
 //
 //  Created by Mihyaeru on 2/13/16.
@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-public class RxTwiftRequest : NSObject, NSURLSessionDataDelegate {
+public class Request : NSObject, NSURLSessionDataDelegate {
     private let request: NSURLRequest
     private let observer: AnyObserver<String>
     private var data = NSMutableData()
@@ -27,7 +27,7 @@ public class RxTwiftRequest : NSObject, NSURLSessionDataDelegate {
         super.init()
     }
 
-    public func start() -> RxTwiftRequest {
+    public func start() -> Request {
         self.session.dataTaskWithRequest(self.request).resume()
         return self
     }

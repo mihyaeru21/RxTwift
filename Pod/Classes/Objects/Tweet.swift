@@ -1,5 +1,5 @@
 //
-//  RxTwiftTweet.swift
+//  Tweet.swift
 //  Pods
 //
 //  Created by Mihyaeru on 2/16/16.
@@ -11,13 +11,13 @@ import Argo
 import Curry
 
 // https://dev.twitter.com/overview/api/tweets
-public class RxTwiftTweet {
+public class Tweet {
 //    let annotations: String  // unused
-    public let contributors: [RxTwiftContributor]?
-    public let coordinates: RxTwiftCoordinate?
+    public let contributors: [Contributor]?
+    public let coordinates: Coordinate?
     public let createdAt: String
-    public let currentUserRetweet: RxTwiftId?
-    public let entities: RxTwiftTweetEntities
+    public let currentUserRetweet: Id?
+    public let entities: TweetEntities
     public let favoriteCount: Int?
     public let favorited: Bool?
     public let filterLevel: String?
@@ -30,29 +30,29 @@ public class RxTwiftTweet {
     public let inReplyToUserId: Int64?
     public let inReplyToUserIdStr: String?
     public let lang: String?
-    public let place: RxTwiftPlace?
+    public let place: Place?
     public let possiblySensitive: Bool?
     public let quotedStatusId: Int64?
     public let quotedStatusIdStr: String?
-    public let quotedStatus: RxTwiftTweet?
+    public let quotedStatus: Tweet?
     public let scopes: [String: String]?  // undocumented key value
     public let retweetCount: Int
     public let retweeted: Bool?
-    public let retweetedStatus: RxTwiftTweet?
+    public let retweetedStatus: Tweet?
     public let source: String
     public let text: String
     public let truncated: Bool
-    public let user: RxTwiftUser
+    public let user: User
     public let withheldCopyright: Bool?
     public let withheldInCountries: [String]?
     public let withheldScope: String?
 
     init(
-        contributors: [RxTwiftContributor]?,
-        coordinates: RxTwiftCoordinate?,
+        contributors: [Contributor]?,
+        coordinates: Coordinate?,
         createdAt: String,
-        currentUserRetweet: RxTwiftId?,
-        entities: RxTwiftTweetEntities,
+        currentUserRetweet: Id?,
+        entities: TweetEntities,
         favoriteCount: Int?,
         favorited: Bool?,
         filterLevel: String?,
@@ -65,19 +65,19 @@ public class RxTwiftTweet {
         inReplyToUserId: Int64?,
         inReplyToUserIdStr: String?,
         lang: String?,
-        place: RxTwiftPlace?,
+        place: Place?,
         possiblySensitive: Bool?,
         quotedStatusId: Int64?,
         quotedStatusIdStr: String?,
-        quotedStatus: RxTwiftTweet?,
+        quotedStatus: Tweet?,
         scopes: [String: String]?,
         retweetCount: Int,
         retweeted: Bool?,
-        retweetedStatus: RxTwiftTweet?,
+        retweetedStatus: Tweet?,
         source: String,
         text: String,
         truncated: Bool,
-        user: RxTwiftUser,
+        user: User,
         withheldCopyright: Bool?,
         withheldInCountries: [String]?,
         withheldScope: String?
@@ -118,9 +118,9 @@ public class RxTwiftTweet {
     }
 }
 
-extension RxTwiftTweet : Decodable {
-    public static func decode(json: JSON) -> Decoded<RxTwiftTweet> {
-        let a = curry(RxTwiftTweet.init)
+extension Tweet : Decodable {
+    public static func decode(json: JSON) -> Decoded<Tweet> {
+        let a = curry(Tweet.init)
             <^> json <||? "contributors"
             <*> json <|?  "coordinates"
             <*> json <|   "created_at"

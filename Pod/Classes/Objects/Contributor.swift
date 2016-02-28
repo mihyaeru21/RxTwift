@@ -1,5 +1,5 @@
 //
-//  RxTwiftContributor.swift
+//  Contributor.swift
 //  Pods
 //
 //  Created by Mihyaeru on 2/16/16.
@@ -11,7 +11,7 @@ import Argo
 import Curry
 
 // https://dev.twitter.com/overview/api/tweets#obj-contributors
-public class RxTwiftContributor {
+public class Contributor {
     public let id:         Int64
     public let idStr:      String
     public let screenName: String
@@ -27,9 +27,9 @@ public class RxTwiftContributor {
     }
 }
 
-extension RxTwiftContributor : Decodable {
-    public static func decode(json: JSON) -> Decoded<RxTwiftContributor> {
-        return curry(RxTwiftContributor.init)
+extension Contributor : Decodable {
+    public static func decode(json: JSON) -> Decoded<Contributor> {
+        return curry(Contributor.init)
             <^> json <| "id"
             <*> json <| "id_str"
             <*> json <| "screen_name"

@@ -1,5 +1,5 @@
 //
-//  RxTwiftUserMention.swift
+//  UserMention.swift
 //  Pods
 //
 //  Created by Mihyaeru on 2/18/16.
@@ -11,7 +11,7 @@ import Argo
 import Curry
 
 // https://dev.twitter.com/overview/api/entities#obj-usermention
-public class RxTwiftUserMention {
+public class UserMention {
     public let id:         Int64
     public let idStr:      String
     public let indices:    [Int]
@@ -33,9 +33,9 @@ public class RxTwiftUserMention {
     }
 }
 
-extension RxTwiftUserMention : Decodable {
-    public static func decode(json: JSON) -> Decoded<RxTwiftUserMention> {
-        return curry(RxTwiftUserMention.init)
+extension UserMention : Decodable {
+    public static func decode(json: JSON) -> Decoded<UserMention> {
+        return curry(UserMention.init)
             <^> json <|  "id"
             <*> json <|  "id_str"
             <*> json <|| "indices"

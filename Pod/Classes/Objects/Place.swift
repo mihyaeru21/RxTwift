@@ -1,5 +1,5 @@
 //
-//  RxTwiftPlace.swift
+//  Place.swift
 //  Pods
 //
 //  Created by Mihyaeru on 2/19/16.
@@ -11,7 +11,7 @@ import Argo
 import Curry
 
 // https://dev.twitter.com/overview/api/places
-public class RxTwiftPlace {
+public class Place {
     public class Box : Decodable {
         public let coordinates: [[[Float]]]
         public let type: String
@@ -64,9 +64,9 @@ public class RxTwiftPlace {
     }
 }
 
-extension RxTwiftPlace : Decodable {
-    public static func decode(json: JSON) -> Decoded<RxTwiftPlace> {
-        let a = curry(RxTwiftPlace.init)
+extension Place : Decodable {
+    public static func decode(json: JSON) -> Decoded<Place> {
+        let a = curry(Place.init)
             <^> json <||| "attributes"
             <*> json <|   "bounding_box"
             <*> json <|   "country"

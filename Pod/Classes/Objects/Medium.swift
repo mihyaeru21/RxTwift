@@ -1,5 +1,5 @@
 //
-//  RxTwiftMedium.swift
+//  Medium.swift
 //  Pods
 //
 //  Created by Mihyaeru on 2/18/16.
@@ -11,7 +11,7 @@ import Argo
 import Curry
 
 // https://dev.twitter.com/overview/api/entities#obj-media
-public class RxTwiftMedium {
+public class Medium {
     public let displayUrl:        String
     public let expandedUrl:       String
     public let id:                Int64
@@ -19,7 +19,7 @@ public class RxTwiftMedium {
     public let indices:           [Int]
     public let mediaUrl:          String
     public let mediaUrlHttps:     String
-    public let sizes:             [String: RxTwiftSize]
+    public let sizes:             [String: Size]
     public let sourceStatusId:    Int64
     public let sourceStatusIdStr: String
     public let type:              String
@@ -33,7 +33,7 @@ public class RxTwiftMedium {
         indices:           [Int],
         mediaUrl:          String,
         mediaUrlHttps:     String,
-        sizes:             [String: RxTwiftSize],
+        sizes:             [String: Size],
         sourceStatusId:    Int64,
         sourceStatusIdStr: String,
         type:              String,
@@ -54,9 +54,9 @@ public class RxTwiftMedium {
     }
 }
 
-extension RxTwiftMedium : Decodable {
-    public static func decode(json: JSON) -> Decoded<RxTwiftMedium> {
-        let a = curry(RxTwiftMedium.init)
+extension Medium : Decodable {
+    public static func decode(json: JSON) -> Decoded<Medium> {
+        let a = curry(Medium.init)
             <^> json <|   "display_url"
             <*> json <|   "expanded_url"
             <*> json <|   "id"

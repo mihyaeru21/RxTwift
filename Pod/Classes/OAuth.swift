@@ -6,15 +6,7 @@ import Foundation
 import RxSwift
 import CryptoSwift
 
-public protocol RxTwiftRandomProtocol {
-    var nonce: String { get }
-}
-
-public protocol RxTwiftTimestampProtocol {
-    var current: Int { get }
-}
-
-public class RxTwiftOAuth {
+public class OAuth {
     public struct HeaderElement {
         public let key: String
         public let value: String
@@ -24,16 +16,16 @@ public class RxTwiftOAuth {
     private let consumerSecret: String
     private let accessToken: String
     private let accessTokenSecret: String
-    private let random: RxTwiftRandomProtocol
-    private let timestamp: RxTwiftTimestampProtocol
+    private let random: RandomProtocol
+    private let timestamp: TimestampProtocol
 
     public init(
             consumerKey: String,
             consumerSecret: String,
             accessToken: String,
             accessTokenSecret: String,
-            random: RxTwiftRandomProtocol = Random(),
-            timestamp: RxTwiftTimestampProtocol = Timestamp()
+            random: RandomProtocol = Random(),
+            timestamp: TimestampProtocol = Timestamp()
     ) {
         self.consumerKey = consumerKey
         self.consumerSecret = consumerSecret

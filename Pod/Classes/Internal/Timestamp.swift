@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal class Timestamp : RxTwiftTimestampProtocol {
+internal class Timestamp : TimestampProtocol {
     var current: Int {
         return Int(NSDate().timeIntervalSince1970)
     }

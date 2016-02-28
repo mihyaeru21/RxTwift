@@ -1,5 +1,5 @@
 //
-//  RxTwiftClient.swift
+//  Client.swift
 //  Pods
 //
 //  Created by Mihyaeru on 2/13/16.
@@ -9,15 +9,15 @@
 import Foundation
 import RxSwift
 
-public class RxTwiftClient {
+public class Client {
     enum Method: String {
         case Get = "GET"
         case Post = "POST"
     }
 
-    private let oauth: RxTwiftOAuth
+    private let oauth: OAuth
 
-    public init(oauth: RxTwiftOAuth) {
+    public init(oauth: OAuth) {
         self.oauth = oauth
     }
 
@@ -54,7 +54,7 @@ public class RxTwiftClient {
                 request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
             }
 
-            let task = RxTwiftRequest(request: request, observer: observer).start()
+            let task = Request(request: request, observer: observer).start()
             return AnonymousDisposable { task.cancel() }
         }
     }

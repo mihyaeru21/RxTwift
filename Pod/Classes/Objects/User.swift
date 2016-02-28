@@ -1,5 +1,5 @@
 //
-//  RxTwiftUser.swift
+//  User.swift
 //  Pods
 //
 //  Created by Mihyaeru on 2/18/16.
@@ -11,13 +11,13 @@ import Argo
 import Curry
 
 // https://dev.twitter.com/overview/api/users
-public class RxTwiftUser {
+public class User {
     public let contributorsEnabled:            Bool
     public let createdAt:                      String
     public let defaultProfile:                 Bool
     public let defaultProfileImage:            Bool
     public let description:                    String?
-    public let entities:                       RxTwiftUserEntities
+    public let entities:                       UserEntities
     public let favouritesCount:                Int
     public let followRequestSent:              Bool?
     public let following:                      Bool?  // deprecated
@@ -47,7 +47,7 @@ public class RxTwiftUser {
     public let protected:                      Bool
     public let screenName:                     String
     public let showAllInlineMedia:             Bool?
-    public let status:                         [RxTwiftTweet]?
+    public let status:                         [Tweet]?
     public let statusesCount:                  Int
     public let timeZone:                       String?
     public let url:                            String?
@@ -62,7 +62,7 @@ public class RxTwiftUser {
         defaultProfile:                 Bool,
         defaultProfileImage:            Bool,
         description:                    String?,
-        entities:                       RxTwiftUserEntities,
+        entities:                       UserEntities,
         favouritesCount:                Int,
         followRequestSent:              Bool?,
         following:                      Bool?,
@@ -92,7 +92,7 @@ public class RxTwiftUser {
         protected:                      Bool,
         screenName:                     String,
         showAllInlineMedia:             Bool?,
-        status:                         [RxTwiftTweet]?,
+        status:                         [Tweet]?,
         statusesCount:                  Int,
         timeZone:                       String?,
         url:                            String?,
@@ -147,9 +147,9 @@ public class RxTwiftUser {
     }
 }
 
-extension RxTwiftUser : Decodable {
-    public static func decode(json: JSON) -> Decoded<RxTwiftUser> {
-        let a = curry(RxTwiftUser.init)
+extension User : Decodable {
+    public static func decode(json: JSON) -> Decoded<User> {
+        let a = curry(User.init)
             <^> json <|   "contributors_enabled"
             <*> json <|   "created_at"
             <*> json <|   "default_profile"

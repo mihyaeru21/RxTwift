@@ -4,17 +4,17 @@ import Quick
 import Nimble
 import RxTwift
 
-class RxTwiftOAuthSpec: QuickSpec {
+class OAuthSpec: QuickSpec {
     override func spec() {
         describe("createAuthorizationHeaderElement") {
-            class TestRandom: RxTwiftRandomProtocol {
+            class TestRandom: RandomProtocol {
                 var nonce: String { return "kllo9940pd9333jh" }
             }
-            class TestTimestamp: RxTwiftTimestampProtocol {
+            class TestTimestamp: TimestampProtocol {
                 var current: Int { return 1191242096 }
             }
 
-            let oauth = RxTwiftOAuth(
+            let oauth = OAuth(
                 consumerKey: "dpf43f3p2l4k3l03",
                 consumerSecret: "kd94hf93k423kf44",
                 accessToken: "nnch734d00sl2jdk",

@@ -1,5 +1,5 @@
 //
-//  RxTwiftHashtag.swift
+//  Hashtag.swift
 //  Pods
 //
 //  Created by Mihyaeru on 2/18/16.
@@ -11,7 +11,7 @@ import Argo
 import Curry
 
 // https://dev.twitter.com/overview/api/entities#obj-hashtags
-public class RxTwiftHashtag {
+public class Hashtag {
     public let indices: [Int]
     public let text: String
 
@@ -24,9 +24,9 @@ public class RxTwiftHashtag {
     }
 }
 
-extension RxTwiftHashtag : Decodable {
-    public static func decode(json: JSON) -> Decoded<RxTwiftHashtag> {
-        return curry(RxTwiftHashtag.init)
+extension Hashtag : Decodable {
+    public static func decode(json: JSON) -> Decoded<Hashtag> {
+        return curry(Hashtag.init)
             <^> json <|| "indices"
             <*> json <|  "text"
     }
