@@ -11,7 +11,7 @@ import Argo
 import Curry
 
 // https://dev.twitter.com/overview/api/users
-public class User {
+public struct User {
     public let contributorsEnabled:            Bool
     public let createdAt:                      String
     public let defaultProfile:                 Bool
@@ -55,96 +55,6 @@ public class User {
     public let verified:                       Bool
     public let withheldInCountries:            String?
     public let withheldScope:                  String?
-
-    init(
-        contributorsEnabled:            Bool,
-        createdAt:                      String,
-        defaultProfile:                 Bool,
-        defaultProfileImage:            Bool,
-        description:                    String?,
-        entities:                       UserEntities,
-        favouritesCount:                Int,
-        followRequestSent:              Bool?,
-        following:                      Bool?,
-        followersCount:                 Int,
-        friendsCount:                   Int,
-        geoEnabled:                     Bool,
-        id:                             Int64,
-        idStr:                          String,
-        isTranslator:                   Bool,
-        lang:                           String,
-        listedCount:                    Int,
-        location:                       String?,
-        name:                           String,
-        notifications:                  Bool,
-        profileBackgroundColor:         String,
-        profileBackgroundImageUrl:      String,
-        profileBackgroundImageUrlHttps: String,
-        profileBackgroundTile:          Bool,
-        profileBannerUrl:               String?,
-        profileImageUrl:                String,
-        profileImageUrlHttps:           String,
-        profileLinkColor:               String,
-        profileSidebarBorderColor:      String,
-        profileSidebarFillColor:        String,
-        profileTextColor:               String,
-        profileUseBackgroundImage:      Bool,
-        protected:                      Bool,
-        screenName:                     String,
-        showAllInlineMedia:             Bool?,
-        status:                         [Tweet]?,
-        statusesCount:                  Int,
-        timeZone:                       String?,
-        url:                            String?,
-        utcOffset:                      Int?,
-        verified:                       Bool,
-        withheldInCountries:            String?,
-        withheldScope:                  String?
-    ) {
-        self.contributorsEnabled            = contributorsEnabled
-        self.createdAt                      = createdAt
-        self.defaultProfile                 = defaultProfile
-        self.defaultProfileImage            = defaultProfileImage
-        self.description                    = description
-        self.entities                       = entities
-        self.favouritesCount                = favouritesCount
-        self.followRequestSent              = followRequestSent
-        self.following                      = following
-        self.followersCount                 = followersCount
-        self.friendsCount                   = friendsCount
-        self.geoEnabled                     = geoEnabled
-        self.id                             = id
-        self.idStr                          = idStr
-        self.isTranslator                   = isTranslator
-        self.lang                           = lang
-        self.listedCount                    = listedCount
-        self.location                       = location
-        self.name                           = name
-        self.notifications                  = notifications
-        self.profileBackgroundColor         = profileBackgroundColor
-        self.profileBackgroundImageUrl      = profileBackgroundImageUrl
-        self.profileBackgroundImageUrlHttps = profileBackgroundImageUrlHttps
-        self.profileBackgroundTile          = profileBackgroundTile
-        self.profileBannerUrl               = profileBannerUrl
-        self.profileImageUrl                = profileImageUrl
-        self.profileImageUrlHttps           = profileImageUrlHttps
-        self.profileLinkColor               = profileLinkColor
-        self.profileSidebarBorderColor      = profileSidebarBorderColor
-        self.profileSidebarFillColor        = profileSidebarFillColor
-        self.profileTextColor               = profileTextColor
-        self.profileUseBackgroundImage      = profileUseBackgroundImage
-        self.protected                      = protected
-        self.screenName                     = screenName
-        self.showAllInlineMedia             = showAllInlineMedia
-        self.status                         = status
-        self.statusesCount                  = statusesCount
-        self.timeZone                       = timeZone
-        self.url                            = url
-        self.utcOffset                      = utcOffset
-        self.verified                       = verified
-        self.withheldInCountries            = withheldInCountries
-        self.withheldScope                  = withheldScope
-    }
 }
 
 extension User : Decodable {

@@ -11,18 +11,10 @@ import Argo
 import Curry
 
 // https://dev.twitter.com/overview/api/places
-public class Place {
-    public class Box : Decodable {
+public struct Place {
+    public struct Box : Decodable {
         public let coordinates: [[[Float]]]
         public let type: String
-
-        public init(
-            coordinates: [[[Float]]],
-            type: String
-        ) {
-            self.coordinates = coordinates
-            self.type        = type
-        }
 
         public static func decode(json: JSON) -> Decoded<Box> {
             return curry(Box.init)
@@ -40,28 +32,6 @@ public class Place {
     public let name: String
     public let placeType: String
     public let url: String
-
-    public init(
-        attributes: [String: String],
-        boundingBox: Box,
-        country: String,
-        countryCode: String,
-        fullName: String,
-        id: String,
-        name: String,
-        placeType: String,
-        url: String
-    ) {
-        self.attributes  = attributes
-        self.boundingBox = boundingBox
-        self.country     = country
-        self.countryCode = countryCode
-        self.fullName    = fullName
-        self.id          = id
-        self.name        = name
-        self.placeType   = placeType
-        self.url         = url
-    }
 }
 
 extension Place : Decodable {

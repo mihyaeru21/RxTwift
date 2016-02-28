@@ -10,20 +10,10 @@ import Foundation
 import Argo
 import Curry
 
-public class Size {
+public struct Size {
     public let h: Int
     public let resize: String
     public let w: Int
-
-    public init(
-        h: Int,
-        resize: String,
-        w: Int
-    ) {
-        self.h = h
-        self.resize = resize
-        self.w = w
-    }
 }
 
 extension Size : Decodable {

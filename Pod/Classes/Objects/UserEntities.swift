@@ -10,12 +10,9 @@ import Foundation
 import Argo
 import Curry
 
-public class UserEntities {
-    public class Urls : Decodable {
+public struct UserEntities {
+    public struct Urls : Decodable {
         public let urls: [Url]
-        public init(urls: [Url]) {
-            self.urls = urls
-        }
 
         public static func decode(json: JSON) -> Decoded<Urls> {
             return curry(Urls.init)
@@ -25,14 +22,6 @@ public class UserEntities {
 
     public let description: Urls
     public let url: Urls?
-
-    public init(
-        description: Urls,
-        url: Urls?
-    ) {
-        self.description = description
-        self.url = url
-    }
 }
 
 extension UserEntities : Decodable {

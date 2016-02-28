@@ -11,17 +11,9 @@ import Argo
 import Curry
 
 // https://dev.twitter.com/overview/api/entities#obj-hashtags
-public class Hashtag {
+public struct Hashtag {
     public let indices: [Int]
     public let text: String
-
-    public init(
-        indices: [Int],
-        text: String
-    ) {
-        self.indices = indices
-        self.text = text
-    }
 }
 
 extension Hashtag : Decodable {

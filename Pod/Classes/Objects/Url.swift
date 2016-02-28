@@ -11,23 +11,11 @@ import Argo
 import Curry
 
 // https://dev.twitter.com/overview/api/entities#obj-url
-public class Url {
+public struct Url {
     public let displayUrl: String
     public let expandedUrl: String
     public let indices: [Int]
     public let url: String
-
-    public init(
-        displayUrl: String,
-        expandedUrl: String,
-        indices: [Int],
-        url: String
-    ) {
-        self.displayUrl  = displayUrl
-        self.expandedUrl = expandedUrl
-        self.indices     = indices
-        self.url         = url
-    }
 }
 
 extension Url : Decodable {

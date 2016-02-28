@@ -10,17 +10,9 @@ import Foundation
 import Argo
 import Curry
 
-public class Id {
+public struct Id {
     public let id: Int64
     public let idStr: String
-
-    public init(
-        id: Int64,
-        idStr: String
-    ) {
-        self.id    = id
-        self.idStr = idStr
-    }
 }
 
 extension Id : Decodable {

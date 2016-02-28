@@ -11,20 +11,10 @@ import Argo
 import Curry
 
 // https://dev.twitter.com/overview/api/tweets#obj-contributors
-public class Contributor {
+public struct Contributor {
     public let id:         Int64
     public let idStr:      String
     public let screenName: String
-
-    public init(
-        id:         Int64,
-        idStr:      String,
-        screenName: String
-    ) {
-        self.id         = id
-        self.idStr      = idStr
-        self.screenName = screenName
-    }
 }
 
 extension Contributor : Decodable {

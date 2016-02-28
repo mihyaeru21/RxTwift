@@ -11,7 +11,7 @@ import Argo
 import Curry
 
 // https://dev.twitter.com/overview/api/entities#obj-media
-public class Medium {
+public struct Medium {
     public let displayUrl:        String
     public let expandedUrl:       String
     public let id:                Int64
@@ -24,34 +24,6 @@ public class Medium {
     public let sourceStatusIdStr: String
     public let type:              String
     public let url:               String
-
-    public init(
-        displayUrl:        String,
-        expandedUrl:       String,
-        id:                Int64,
-        idStr:             String,
-        indices:           [Int],
-        mediaUrl:          String,
-        mediaUrlHttps:     String,
-        sizes:             [String: Size],
-        sourceStatusId:    Int64,
-        sourceStatusIdStr: String,
-        type:              String,
-        url:               String
-    ) {
-        self.displayUrl        = displayUrl
-        self.expandedUrl       = expandedUrl
-        self.id                = id
-        self.idStr             = idStr
-        self.indices           = indices
-        self.mediaUrl          = mediaUrl
-        self.mediaUrlHttps     = mediaUrlHttps
-        self.sizes             = sizes
-        self.sourceStatusId    = sourceStatusId
-        self.sourceStatusIdStr = sourceStatusIdStr
-        self.type              = type
-        self.url               = url
-    }
 }
 
 extension Medium : Decodable {

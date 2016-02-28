@@ -11,26 +11,12 @@ import Argo
 import Curry
 
 // https://dev.twitter.com/overview/api/entities#obj-usermention
-public class UserMention {
+public struct UserMention {
     public let id:         Int64
     public let idStr:      String
     public let indices:    [Int]
     public let name:       String
     public let screenName: String
-
-    public init(
-        id:         Int64,
-        idStr:      String,
-        indices:    [Int],
-        name:       String,
-        screenName: String
-    ) {
-        self.id         = id
-        self.idStr      = idStr
-        self.indices    = indices
-        self.name       = name
-        self.screenName = screenName
-    }
 }
 
 extension UserMention : Decodable {

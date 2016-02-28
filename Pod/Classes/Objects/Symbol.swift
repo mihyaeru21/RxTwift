@@ -11,17 +11,9 @@ import Argo
 import Curry
 
 // https://dev.twitter.com/overview/api/entities-in-twitter-objects#symbols
-public class Symbol {
+public struct Symbol {
     public let text: String
     public let indices: [Int]
-
-    public init(
-        text: String,
-        indices: [Int]
-    ) {
-        self.text    = text
-        self.indices = indices
-    }
 }
 
 extension Symbol : Decodable {

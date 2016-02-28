@@ -11,17 +11,9 @@ import Argo
 import Curry
 
 // https://dev.twitter.com/overview/api/tweets#obj-coordinates
-public class Coordinate {
+public struct Coordinate {
     public let coordinates: [Float]
     public let type:        String
-
-    public init(
-        coordinates: [Float],
-        type:        String
-    ) {
-        self.coordinates = coordinates
-        self.type        = type
-    }
 }
 
 public extension Coordinate {
