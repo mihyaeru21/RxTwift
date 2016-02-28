@@ -32,6 +32,7 @@ public class RxTwift {
     }
 }
 
+// /statuses/...
 public extension RxTwift {
     public func homeTimeline(
         count count:        Int?   = nil,
@@ -48,6 +49,24 @@ public extension RxTwift {
             "max_id"             .by(maxId),
             "trim_user"          .by(trimUser),
             "exclude_replies"    .by(excludeReplies),
+            "contributor_details".by(contributorDetails),
+            "include_entities"   .by(includeEntities)
+        )).decode().flatMapSequence()
+    }
+
+    public func mentionsTimeline(
+        count count:        Int?   = nil,
+        sinceId:            Int64? = nil,
+        maxId:              Int64? = nil,
+        trimUser:           Bool?  = nil,
+        contributorDetails: Bool?  = nil,
+        includeEntities:    Bool?  = nil
+    ) -> Observable<Tweet> {
+        return self.client.get("/statuses/mentions_timeline.json", params: Dictionary.createWithNotNil(
+            "count"              .by(count),
+            "since_id"           .by(sinceId),
+            "max_id"             .by(maxId),
+            "trim_user"          .by(trimUser),
             "contributor_details".by(contributorDetails),
             "include_entities"   .by(includeEntities)
         )).decode().flatMapSequence()
