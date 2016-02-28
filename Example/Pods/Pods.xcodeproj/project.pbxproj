@@ -318,6 +318,7 @@
 		F1CD305E1C734952004121DD /* RxTwiftCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD305D1C734952004121DD /* RxTwiftCoordinate.swift */; };
 		F1CD30601C734BAA004121DD /* RxTwiftId.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD305F1C734BAA004121DD /* RxTwiftId.swift */; };
 		F1D4A8A1FC68EFA7F45945908D70A352 /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B73F471BB7E60F7D954DCB19240C33 /* BeNil.swift */; };
+		F1DA91351C81BD32006EC914 /* Argo+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA91341C81BD32006EC914 /* Argo+Extension.swift */; };
 		F23946D3C178FA99FA0F35D98DA65571 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B441C1BDB7ABD5556A738EF86FE4ABB /* RxSwift.framework */; };
 		F5187C07E715E26EA89E596F39778CD0 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B6042C08782EEC21C5561F33E3E82D /* Queue.swift */; };
 		F6225CE170AC2F7C1FF1F223DAB1F027 /* RetryWhen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822BBACEC584B1D652D78A320C44841A /* RetryWhen.swift */; };
@@ -810,6 +811,7 @@
 		F1CD30591C734897004121DD /* RxTwiftContributor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftContributor.swift; sourceTree = "<group>"; };
 		F1CD305D1C734952004121DD /* RxTwiftCoordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftCoordinate.swift; sourceTree = "<group>"; };
 		F1CD305F1C734BAA004121DD /* RxTwiftId.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwiftId.swift; sourceTree = "<group>"; };
+		F1DA91341C81BD32006EC914 /* Argo+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Argo+Extension.swift"; sourceTree = "<group>"; };
 		F345019B3C3773A4A485A8F10C7D8296 /* SynchronizedUnsubscribeType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SynchronizedUnsubscribeType.swift; path = RxSwift/Concurrency/SynchronizedUnsubscribeType.swift; sourceTree = "<group>"; };
 		F3AB7A75BBF686813DE401E893F9383A /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Nimble/DSL.swift; sourceTree = "<group>"; };
 		F572893F22A4E7EBD64EA46BC04EE416 /* Pods-RxTwift_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RxTwift_Tests-dummy.m"; sourceTree = "<group>"; };
@@ -1069,6 +1071,7 @@
 		49387CED091D16C0D2916F5749FDEFF4 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				F1DA91341C81BD32006EC914 /* Argo+Extension.swift */,
 				39C9FADDF0A8DB7ABA124DDC681B5E2C /* Dictionary+Extension.swift */,
 				F8555FA8CCE873D85002BE4FF5E1856F /* Random.swift */,
 				9F394183E767D29C016E02C16BD73A75 /* String+Extension.swift */,
@@ -1996,6 +1999,7 @@
 				CFA0658F7951DA743DB1140E6FEC0C9F /* RxTwiftRequest.swift in Sources */,
 				969F43FE7CE7834BDA3F50B8956258B4 /* String+Extension.swift in Sources */,
 				E723F58CB0C004A40E379DA88006CA9F /* Timestamp.swift in Sources */,
+				F1DA91351C81BD32006EC914 /* Argo+Extension.swift in Sources */,
 				F1547D851C75F3180060DBEF /* RxTwiftUserMention.swift in Sources */,
 				F1CD30601C734BAA004121DD /* RxTwiftId.swift in Sources */,
 			);

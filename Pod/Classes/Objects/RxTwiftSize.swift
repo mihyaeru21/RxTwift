@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import Argo
+import Curry
 
 public class RxTwiftSize {
-    let h: Int
-    let resize: String
-    let w: Int
+    public let h: Int
+    public let resize: String
+    public let w: Int
 
     public init(
         h: Int,
@@ -21,5 +23,14 @@ public class RxTwiftSize {
         self.h = h
         self.resize = resize
         self.w = w
+    }
+}
+
+extension RxTwiftSize : Decodable {
+    public static func decode(json: JSON) -> Decoded<RxTwiftSize> {
+        return curry(RxTwiftSize.init)
+            <^> json <| "h"
+            <*> json <| "resize"
+            <*> json <| "w"
     }
 }

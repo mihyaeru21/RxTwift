@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import Argo
+import Curry
 
 // https://dev.twitter.com/overview/api/entities#obj-url
 public class RxTwiftUrl {
-    let displayUrl: String
-    let expandedUrl: String
-    let indices: [Int]
-    let url: String
+    public let displayUrl: String
+    public let expandedUrl: String
+    public let indices: [Int]
+    public let url: String
 
     public init(
         displayUrl: String,
@@ -25,5 +27,15 @@ public class RxTwiftUrl {
         self.expandedUrl = expandedUrl
         self.indices     = indices
         self.url         = url
+    }
+}
+
+extension RxTwiftUrl : Decodable {
+    public static func decode(json: JSON) -> Decoded<RxTwiftUrl> {
+        return curry(RxTwiftUrl.init)
+            <^> json <|  "display_url"
+            <*> json <|  "expanded_url"
+            <*> json <|| "indices"
+            <*> json <|  "url"
     }
 }

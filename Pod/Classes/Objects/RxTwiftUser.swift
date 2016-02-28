@@ -7,97 +7,99 @@
 //
 
 import Foundation
+import Argo
+import Curry
 
 // https://dev.twitter.com/overview/api/users
 public class RxTwiftUser {
-    let contributorsEnabled: Bool
-    let createdAt: String
-    let defaultProfile: Bool
-    let defaultProfileImage: Bool
-    let description: String?
-    let entities: RxTwiftUserEntities
-    let favouritesCount: Int
-    let followRequestSent: Bool?
-    let following: Bool?  // deprecated
-    let followersCount: Int
-    let friendsCount: Int
-    let geoEnabled: Bool
-    let id: Int64
-    let idStr: String
-    let isTranslator: Bool
-    let lang: String
-    let listedCount: Int
-    let location: String?
-    let name: String
-    let notifications: Bool // deprecated
-    let profileBackgroundColor: String
-    let profileBackgroundImageUrl: String
-    let profileBackgroundImageUrlHttps: String
-    let profileBackgroundTile: Bool
-    let profileBannerUrl: String
-    let profileImageUrl: String
-    let profileImageUrlHttps: String
-    let profileLinkColor: String
-    let profileSidebarBorderColor: String
-    let profileSidebarFillColor: String
-    let profileTextColor: String
-    let profileUseBackgroundImage: Bool
-    let protected: Bool
-    let screenName: String
-    let showAllInlineMedia: Bool
-    let status: [RxTwiftTweet]?
-    let statusesCount: Int
-    let timeZone: String?
-    let url: String?
-    let utcOffset: Int?
-    let verified: Bool
-    let withheldInCountries: String
-    let withheldScope: String
+    public let contributorsEnabled:            Bool
+    public let createdAt:                      String
+    public let defaultProfile:                 Bool
+    public let defaultProfileImage:            Bool
+    public let description:                    String?
+    public let entities:                       RxTwiftUserEntities
+    public let favouritesCount:                Int
+    public let followRequestSent:              Bool?
+    public let following:                      Bool?  // deprecated
+    public let followersCount:                 Int
+    public let friendsCount:                   Int
+    public let geoEnabled:                     Bool
+    public let id:                             Int64
+    public let idStr:                          String
+    public let isTranslator:                   Bool
+    public let lang:                           String
+    public let listedCount:                    Int
+    public let location:                       String?
+    public let name:                           String
+    public let notifications:                  Bool // deprecated
+    public let profileBackgroundColor:         String
+    public let profileBackgroundImageUrl:      String
+    public let profileBackgroundImageUrlHttps: String
+    public let profileBackgroundTile:          Bool
+    public let profileBannerUrl:               String?
+    public let profileImageUrl:                String
+    public let profileImageUrlHttps:           String
+    public let profileLinkColor:               String
+    public let profileSidebarBorderColor:      String
+    public let profileSidebarFillColor:        String
+    public let profileTextColor:               String
+    public let profileUseBackgroundImage:      Bool
+    public let protected:                      Bool
+    public let screenName:                     String
+    public let showAllInlineMedia:             Bool?
+    public let status:                         [RxTwiftTweet]?
+    public let statusesCount:                  Int
+    public let timeZone:                       String?
+    public let url:                            String?
+    public let utcOffset:                      Int?
+    public let verified:                       Bool
+    public let withheldInCountries:            String?
+    public let withheldScope:                  String?
 
     init(
-        contributorsEnabled: Bool,
-        createdAt: String,
-        defaultProfile: Bool,
-        defaultProfileImage: Bool,
-        description: String?,
-        entities: RxTwiftUserEntities,
-        favouritesCount: Int,
-        followRequestSent: Bool?,
-        following: Bool?,
-        followersCount: Int,
-        friendsCount: Int,
-        geoEnabled: Bool,
-        id: Int64,
-        idStr: String,
-        isTranslator: Bool,
-        lang: String,
-        listedCount: Int,
-        location: String?,
-        name: String,
-        notifications: Bool,
-        profileBackgroundColor: String,
-        profileBackgroundImageUrl: String,
+        contributorsEnabled:            Bool,
+        createdAt:                      String,
+        defaultProfile:                 Bool,
+        defaultProfileImage:            Bool,
+        description:                    String?,
+        entities:                       RxTwiftUserEntities,
+        favouritesCount:                Int,
+        followRequestSent:              Bool?,
+        following:                      Bool?,
+        followersCount:                 Int,
+        friendsCount:                   Int,
+        geoEnabled:                     Bool,
+        id:                             Int64,
+        idStr:                          String,
+        isTranslator:                   Bool,
+        lang:                           String,
+        listedCount:                    Int,
+        location:                       String?,
+        name:                           String,
+        notifications:                  Bool,
+        profileBackgroundColor:         String,
+        profileBackgroundImageUrl:      String,
         profileBackgroundImageUrlHttps: String,
-        profileBackgroundTile: Bool,
-        profileBannerUrl: String,
-        profileImageUrl: String,
-        profileImageUrlHttps: String,
-        profileLinkColor: String,
-        profileSidebarBorderColor: String,
-        profileSidebarFillColor: String,
-        profileTextColor: String,
-        profileUseBackgroundImage: Bool,
-        protected: Bool,
-        screenName: String,
-        showAllInlineMedia: Bool,
-        status: [RxTwiftTweet]?,
-        statusesCount: Int,
-        timeZone: String?,
-        url: String?,
-        utcOffset: Int?,
-        verified: Bool,
-        withheldInCountries: String,
-        withheldScope: String
+        profileBackgroundTile:          Bool,
+        profileBannerUrl:               String?,
+        profileImageUrl:                String,
+        profileImageUrlHttps:           String,
+        profileLinkColor:               String,
+        profileSidebarBorderColor:      String,
+        profileSidebarFillColor:        String,
+        profileTextColor:               String,
+        profileUseBackgroundImage:      Bool,
+        protected:                      Bool,
+        screenName:                     String,
+        showAllInlineMedia:             Bool?,
+        status:                         [RxTwiftTweet]?,
+        statusesCount:                  Int,
+        timeZone:                       String?,
+        url:                            String?,
+        utcOffset:                      Int?,
+        verified:                       Bool,
+        withheldInCountries:            String?,
+        withheldScope:                  String?
     ) {
         self.contributorsEnabled            = contributorsEnabled
         self.createdAt                      = createdAt
@@ -142,5 +144,54 @@ public class RxTwiftUser {
         self.verified                       = verified
         self.withheldInCountries            = withheldInCountries
         self.withheldScope                  = withheldScope
+    }
+}
+
+extension RxTwiftUser : Decodable {
+    public static func decode(json: JSON) -> Decoded<RxTwiftUser> {
+        let a = curry(RxTwiftUser.init)
+            <^> json <|   "contributors_enabled"
+            <*> json <|   "created_at"
+            <*> json <|   "default_profile"
+            <*> json <|   "default_profile_image"
+            <*> json <|?  "description"
+            <*> json <|   "entities"
+        let b = a <*> json <|   "favourites_count"
+            <*> json <|?  "follow_request_sent"
+            <*> json <|?  "following"
+            <*> json <|   "followers_count"
+            <*> json <|   "friends_count"
+            <*> json <|   "geo_enabled"
+            <*> json <|   "id"
+            <*> json <|   "id_str"
+        let c = b <*> json <|   "is_translator"
+            <*> json <|   "lang"
+            <*> json <|   "listed_count"
+            <*> json <|?  "location"
+            <*> json <|   "name"
+            <*> json <|   "notifications"
+            <*> json <|   "profile_background_color"
+            <*> json <|   "profile_background_image_url"
+            <*> json <|   "profile_background_image_url_https"
+        let d = c <*> json <|   "profile_background_tile"
+            <*> json <|?  "profile_banner_url"
+            <*> json <|   "profile_image_url"
+            <*> json <|   "profile_image_url_https"
+            <*> json <|   "profile_link_color"
+            <*> json <|   "profile_sidebar_border_color"
+            <*> json <|   "profile_sidebar_fill_color"
+            <*> json <|   "profile_text_color"
+        let e = d <*> json <|   "profile_use_background_image"
+            <*> json <|   "protected"
+            <*> json <|   "screen_name"
+            <*> json <|?  "show_all_inline_media"
+            <*> json <||? "status"
+            <*> json <|   "statuses_count"
+            <*> json <|?  "time_zone"
+        return e <*> json <|?  "url"
+            <*> json <|?  "utc_offset"
+            <*> json <|   "verified"
+            <*> json <|?  "withheld_in_countries"
+            <*> json <|?  "withheld_scope"
     }
 }

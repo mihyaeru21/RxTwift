@@ -7,15 +7,17 @@
 //
 
 import Foundation
+import Argo
+import Curry
 
 // https://dev.twitter.com/overview/api/tweets#obj-coordinates
 public class RxTwiftCoordinate {
-    let coordinates: [Float]
-    let type: String
+    public let coordinates: [Float]
+    public let type:        String
 
     public init(
         coordinates: [Float],
-        type: String
+        type:        String
     ) {
         self.coordinates = coordinates
         self.type        = type
@@ -23,6 +25,14 @@ public class RxTwiftCoordinate {
 }
 
 public extension RxTwiftCoordinate {
-    var lat: Float? { return self.coordinates.first }
-    var lng: Float? { return self.coordinates.last }
+    public var lat: Float? { return self.coordinates.first }
+    public var lng: Float? { return self.coordinates.last }
+}
+
+extension RxTwiftCoordinate : Decodable {
+    public static func decode(json: JSON) -> Decoded<RxTwiftCoordinate> {
+        return curry(RxTwiftCoordinate.init)
+            <^> json <|| "coordinates"
+            <*> json <|  "type"
+    }
 }

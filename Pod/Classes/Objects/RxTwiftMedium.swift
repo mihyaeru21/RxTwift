@@ -7,35 +7,37 @@
 //
 
 import Foundation
+import Argo
+import Curry
 
 // https://dev.twitter.com/overview/api/entities#obj-media
 public class RxTwiftMedium {
-    let displayUrl: String
-    let expandedUrl: String
-    let id: Int64
-    let idStr: String
-    let indices: [Int]
-    let mediaUrl: String
-    let mediaUrlHttps: String
-    let sizes: [String: RxTwiftSize]
-    let sourceStatusId: Int64
-    let sourceStatusIdStr: String
-    let type: String
-    let url: String
+    public let displayUrl:        String
+    public let expandedUrl:       String
+    public let id:                Int64
+    public let idStr:             String
+    public let indices:           [Int]
+    public let mediaUrl:          String
+    public let mediaUrlHttps:     String
+    public let sizes:             [String: RxTwiftSize]
+    public let sourceStatusId:    Int64
+    public let sourceStatusIdStr: String
+    public let type:              String
+    public let url:               String
 
     public init(
-        displayUrl: String,
-        expandedUrl: String,
-        id: Int64,
-        idStr: String,
-        indices: [Int],
-        mediaUrl: String,
-        mediaUrlHttps: String,
-        sizes: [String: RxTwiftSize],
-        sourceStatusId: Int64,
+        displayUrl:        String,
+        expandedUrl:       String,
+        id:                Int64,
+        idStr:             String,
+        indices:           [Int],
+        mediaUrl:          String,
+        mediaUrlHttps:     String,
+        sizes:             [String: RxTwiftSize],
+        sourceStatusId:    Int64,
         sourceStatusIdStr: String,
-        type: String,
-        url: String
+        type:              String,
+        url:               String
     ) {
         self.displayUrl        = displayUrl
         self.expandedUrl       = expandedUrl
@@ -49,5 +51,23 @@ public class RxTwiftMedium {
         self.sourceStatusIdStr = sourceStatusIdStr
         self.type              = type
         self.url               = url
+    }
+}
+
+extension RxTwiftMedium : Decodable {
+    public static func decode(json: JSON) -> Decoded<RxTwiftMedium> {
+        let a = curry(RxTwiftMedium.init)
+            <^> json <|   "display_url"
+            <*> json <|   "expanded_url"
+            <*> json <|   "id"
+            <*> json <|   "id_str"
+            <*> json <||  "indices"
+            <*> json <|   "media_url"
+        return a <*> json <|   "media_url_https"
+            <*> json <||| "sizes"
+            <*> json <|   "source_status_id"
+            <*> json <|   "source_status_id_str"
+            <*> json <|   "type"
+            <*> json <|   "url"
     }
 }

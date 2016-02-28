@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import Argo
+import Curry
 
 // https://dev.twitter.com/overview/api/places
 public class RxTwiftPlace {
-    public class Box {
-        let coordinates: [[[Float]]]
-        let type: String
+    public class Box : Decodable {
+        public let coordinates: [[[Float]]]
+        public let type: String
 
         public init(
             coordinates: [[[Float]]],
@@ -21,17 +23,23 @@ public class RxTwiftPlace {
             self.coordinates = coordinates
             self.type        = type
         }
+
+        public static func decode(json: JSON) -> Decoded<Box> {
+            return curry(Box.init)
+                <^> pure([[[0]]])  // FIXME
+                <*> json <| "type"
+        }
     }
 
-    let attributes: [String: String] // to complex...
-    let boundingBox: Box
-    let country: String
-    let countryCode: String
-    let fullName: String
-    let id: String
-    let name: String
-    let placeType: String
-    let url: String
+    public let attributes: [String: String] // to complex...
+    public let boundingBox: Box
+    public let country: String
+    public let countryCode: String
+    public let fullName: String
+    public let id: String
+    public let name: String
+    public let placeType: String
+    public let url: String
 
     public init(
         attributes: [String: String],
@@ -53,5 +61,20 @@ public class RxTwiftPlace {
         self.name        = name
         self.placeType   = placeType
         self.url         = url
+    }
+}
+
+extension RxTwiftPlace : Decodable {
+    public static func decode(json: JSON) -> Decoded<RxTwiftPlace> {
+        let a = curry(RxTwiftPlace.init)
+            <^> json <||| "attributes"
+            <*> json <|   "bounding_box"
+            <*> json <|   "country"
+            <*> json <|   "country_code"
+            <*> json <|   "full_name"
+            <*> json <|   "id"
+        return a <*> json <|   "name"
+            <*> json <|   "place_type"
+            <*> json <|   "url"
     }
 }

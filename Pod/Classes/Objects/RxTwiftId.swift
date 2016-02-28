@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import Argo
+import Curry
 
-public class RxTwiftid {
-    let id: Int64
-    let idStr: String
+public class RxTwiftId {
+    public let id: Int64
+    public let idStr: String
 
     public init(
         id: Int64,
@@ -18,5 +20,13 @@ public class RxTwiftid {
     ) {
         self.id    = id
         self.idStr = idStr
+    }
+}
+
+extension RxTwiftId : Decodable {
+    public static func decode(json: JSON) -> Decoded<RxTwiftId> {
+        return curry(RxTwiftId.init)
+            <^> json <| "id"
+            <*> json <| "id_str"
     }
 }

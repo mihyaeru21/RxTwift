@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import Argo
+import Curry
 
 // https://dev.twitter.com/overview/api/entities#obj-hashtags
 public class RxTwiftHashtag {
-    let indices: [Int]
-    let text: String
+    public let indices: [Int]
+    public let text: String
 
     public init(
         indices: [Int],
@@ -19,5 +21,13 @@ public class RxTwiftHashtag {
     ) {
         self.indices = indices
         self.text = text
+    }
+}
+
+extension RxTwiftHashtag : Decodable {
+    public static func decode(json: JSON) -> Decoded<RxTwiftHashtag> {
+        return curry(RxTwiftHashtag.init)
+            <^> json <|| "indices"
+            <*> json <|  "text"
     }
 }

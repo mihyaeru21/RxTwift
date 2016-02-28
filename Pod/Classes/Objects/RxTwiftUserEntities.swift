@@ -7,23 +7,38 @@
 //
 
 import Foundation
+import Argo
+import Curry
 
 public class RxTwiftUserEntities {
-    public class Urls {
-        let urls: [RxTwiftUrl]
+    public class Urls : Decodable {
+        public let urls: [RxTwiftUrl]
         public init(urls: [RxTwiftUrl]) {
             self.urls = urls
         }
+
+        public static func decode(json: JSON) -> Decoded<Urls> {
+            return curry(Urls.init)
+                <^> json <|| "urls"
+        }
     }
 
-    let description: Urls
-    let url: Urls
+    public let description: Urls
+    public let url: Urls?
 
     public init(
         description: Urls,
-        url: Urls
+        url: Urls?
     ) {
         self.description = description
         self.url = url
+    }
+}
+
+extension RxTwiftUserEntities : Decodable {
+    public static func decode(json: JSON) -> Decoded<RxTwiftUserEntities> {
+        return curry(RxTwiftUserEntities.init)
+            <^> json <|  "description"
+            <*> json <|? "url"
     }
 }

@@ -7,53 +7,55 @@
 //
 
 import Foundation
+import Argo
+import Curry
 
 // https://dev.twitter.com/overview/api/tweets
 public class RxTwiftTweet {
 //    let annotations: String  // unused
-    let contributors: [RxTwiftContributor]?
-    let coordinates: RxTwiftCoordinate?
-    let createdAt: String
-    let currentUserRetweet: RxTwiftid?
-    let entities: RxTwiftTweetEntities
-    let favoriteCount: Int?
-    let favorited: Bool?
-    let filterLevel: String
+    public let contributors: [RxTwiftContributor]?
+    public let coordinates: RxTwiftCoordinate?
+    public let createdAt: String
+    public let currentUserRetweet: RxTwiftId?
+    public let entities: RxTwiftTweetEntities
+    public let favoriteCount: Int?
+    public let favorited: Bool?
+    public let filterLevel: String?
 //    let geo: String?  // deprecated Geo
-    let id: Int64
-    let idStr: String
-    let inReplyToScreenName: String?
-    let inReplyToStatusId: Int64?
-    let inReplyToStatusIdStr: String?
-    let inReplyToUserId: Int64?
-    let inReplyToUserIdStr: String?
-    let lang: String?
-    let place: RxTwiftPlace?
-    let possiblySensitive: Bool?
-    let quotedStatusId: Int64?
-    let quotedStatusIdStr: String?
-    let quotedStatus: RxTwiftTweet?
-    let scopes: [String: String]  // undocumented key value
-    let retweetCount: Int
-    let retweeted: Bool?
-    let retweetedStatus: RxTwiftTweet?
-    let source: String
-    let text: String
-    let truncated: Bool
-    let user: RxTwiftUser
-    let withheldCopyright: Bool
-    let withheldInCountries: [String]
-    let withheldScope: String
+    public let id: Int64
+    public let idStr: String
+    public let inReplyToScreenName: String?
+    public let inReplyToStatusId: Int64?
+    public let inReplyToStatusIdStr: String?
+    public let inReplyToUserId: Int64?
+    public let inReplyToUserIdStr: String?
+    public let lang: String?
+    public let place: RxTwiftPlace?
+    public let possiblySensitive: Bool?
+    public let quotedStatusId: Int64?
+    public let quotedStatusIdStr: String?
+    public let quotedStatus: RxTwiftTweet?
+    public let scopes: [String: String]?  // undocumented key value
+    public let retweetCount: Int
+    public let retweeted: Bool?
+    public let retweetedStatus: RxTwiftTweet?
+    public let source: String
+    public let text: String
+    public let truncated: Bool
+    public let user: RxTwiftUser
+    public let withheldCopyright: Bool?
+    public let withheldInCountries: [String]?
+    public let withheldScope: String?
 
     init(
         contributors: [RxTwiftContributor]?,
         coordinates: RxTwiftCoordinate?,
         createdAt: String,
-        currentUserRetweet: RxTwiftid?,
+        currentUserRetweet: RxTwiftId?,
         entities: RxTwiftTweetEntities,
         favoriteCount: Int?,
         favorited: Bool?,
-        filterLevel: String,
+        filterLevel: String?,
 //        geo: String?,
         id: Int64,
         idStr: String,
@@ -68,7 +70,7 @@ public class RxTwiftTweet {
         quotedStatusId: Int64?,
         quotedStatusIdStr: String?,
         quotedStatus: RxTwiftTweet?,
-        scopes: [String: String],
+        scopes: [String: String]?,
         retweetCount: Int,
         retweeted: Bool?,
         retweetedStatus: RxTwiftTweet?,
@@ -76,9 +78,9 @@ public class RxTwiftTweet {
         text: String,
         truncated: Bool,
         user: RxTwiftUser,
-        withheldCopyright: Bool,
-        withheldInCountries: [String],
-        withheldScope: String
+        withheldCopyright: Bool?,
+        withheldInCountries: [String]?,
+        withheldScope: String?
     ) {
         self.contributors         = contributors
         self.coordinates          = coordinates
@@ -113,5 +115,43 @@ public class RxTwiftTweet {
         self.withheldCopyright    = withheldCopyright
         self.withheldInCountries  = withheldInCountries
         self.withheldScope        = withheldScope
+    }
+}
+
+extension RxTwiftTweet : Decodable {
+    public static func decode(json: JSON) -> Decoded<RxTwiftTweet> {
+        let a = curry(RxTwiftTweet.init)
+            <^> json <||? "contributors"
+            <*> json <|?  "coordinates"
+            <*> json <|   "created_at"
+            <*> json <|?  "current_user_retweet"
+        let b = a <*> json <|   "entities"
+            <*> json <|?  "favorite_count"
+            <*> json <|?  "favorited"
+            <*> json <|?  "filter_level"
+            <*> json <|   "id"
+            <*> json <|   "id_str"
+        let c = b <*> json <|?  "in_reply_to_screen_name"
+            <*> json <|?  "in_reply_to_status_id"
+            <*> json <|?  "in_reply_to_status_id_str"
+            <*> json <|?  "in_reply_to_user_id"
+            <*> json <|?  "in_reply_to_user_id_str"
+            <*> json <|?  "lang"
+            <*> json <|?  "place"
+        let d = c <*> json <|?  "possibly_sensitive"
+            <*> json <|?  "quoted_status_id"
+            <*> json <|?  "quoted_status_id_str"
+            <*> json <|?  "quoted_status"
+            <*> json <|||? "scopes"
+            <*> json <|   "retweet_count"
+            <*> json <|?  "retweeted"
+            <*> json <|?  "retweeted_status"
+        return d <*> json <|   "source"
+            <*> json <|   "text"
+            <*> json <|   "truncated"
+            <*> json <|   "user"
+            <*> json <|?  "withheld_copyright"
+            <*> json <||? "withheld_in_countries"
+            <*> json <|?  "withheld_scope"
     }
 }
