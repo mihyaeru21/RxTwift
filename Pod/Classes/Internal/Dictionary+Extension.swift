@@ -22,9 +22,9 @@ internal extension Dictionary {
 
     internal static func createWithNotNil(taples: (Key, Value?)...) -> Dictionary<Key, Value> {
         var dict = Dictionary<Key, Value>()
-        for taple in taples {
-            if let value = taple.1 {
-                dict[taple.0] = value
+        for tuple in taples {
+            if let value = tuple.1 {
+                dict[tuple.0] = value
             }
         }
         return dict
