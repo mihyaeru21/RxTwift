@@ -8,13 +8,25 @@
 
 import Foundation
 
-internal func merge<K, V>(dict dict: [K: V], other: [K: V]) -> [K: V] {
-    var new = Dictionary<K, V>()
-    for (key, value) in dict {
-        new[key] = value
+internal extension Dictionary {
+    internal static func merge(dict dict: [Key: Value], other: [Key: Value]) -> [Key: Value] {
+        var new = Dictionary<Key, Value>()
+        for (key, value) in dict {
+            new[key] = value
+        }
+        for (key, value) in other {
+            new[key] = value
+        }
+        return new
     }
-    for (key, value) in other {
-        new[key] = value
+
+    internal static func createWithNotNil(taples: (Key, Value?)...) -> Dictionary<Key, Value> {
+        var dict = Dictionary<Key, Value>()
+        for taple in taples {
+            if let value = taple.1 {
+                dict[taple.0] = value
+            }
+        }
+        return dict
     }
-    return new
 }

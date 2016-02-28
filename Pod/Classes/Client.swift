@@ -21,16 +21,16 @@ public class Client {
         self.oauth = oauth
     }
 
-    public func get(path: String, params: [String: String]) -> Observable<String> {
+    public func get(path: String, params: [String: String]) -> Observable<NSData> {
         return self.request(.Get, path: path, params: params)
     }
 
-    public func post(path: String, params: [String: String]) -> Observable<String> {
+    public func post(path: String, params: [String: String]) -> Observable<NSData> {
         return self.request(.Post, path: path, params: params)
     }
 
-    func request(method: Method, path: String, params: [String: String]) -> Observable<String> {
-        return Observable.create { (observer: AnyObserver<String>) -> Disposable in
+    func request(method: Method, path: String, params: [String: String]) -> Observable<NSData> {
+        return Observable.create { (observer: AnyObserver<NSData>) -> Disposable in
             let absUrl = "https://api.twitter.com/1.1" + path
             var encodedParams = Dictionary<String, String>()
             for (key, value) in params {

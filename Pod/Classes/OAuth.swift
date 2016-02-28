@@ -45,15 +45,15 @@ public class OAuth {
     ]
 
     public func createAuthorizationHeaderElement(method: String, url: String, params: [String: String]) -> HeaderElement? {
-        let headers = merge(dict: self.oauthHeaderElements, other: [
+        let headers = Dictionary.merge(dict: self.oauthHeaderElements, other: [
             "oauth_nonce": self.random.nonce,
             "oauth_timestamp": self.timestamp.current.description,
         ])
 
-        guard let base = self.createBaseString(method, url: url, params: merge(dict: headers, other: params)) else { return nil }
+        guard let base = self.createBaseString(method, url: url, params: Dictionary.merge(dict: headers, other: params)) else { return nil }
         guard let signature = self.createSignature(base, key: self.key) else { return nil }
 
-        let authHeaders = merge(dict: headers, other: ["oauth_signature": signature])
+        let authHeaders = Dictionary.merge(dict: headers, other: ["oauth_signature": signature])
         let combinedHeader = authHeaders.map { key, value in "\(key)=\"\(value)\"" }.sort().joinWithSeparator(", ")
         return HeaderElement(key: "Authorization", value: "OAuth \(combinedHeader)")
     }

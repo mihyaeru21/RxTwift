@@ -312,8 +312,10 @@
 		F1547D871C75F6AF0060DBEF /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1547D861C75F6AF0060DBEF /* Symbol.swift */; };
 		F1547D891C7615F10060DBEF /* UserEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1547D881C7615F10060DBEF /* UserEntities.swift */; };
 		F1547D8B1C761DD20060DBEF /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1547D8A1C761DD20060DBEF /* Place.swift */; };
+		F178C4021C832FCA00690972 /* Observable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178C4011C832FCA00690972 /* Observable+Extension.swift */; };
 		F19F371AAA7DD83795BABB07100C9904 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A7A1C520B639D90B29877A33E81A6 /* JSON.swift */; };
 		F1ABE7DF1C82E9D90087385B /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABE7DE1C82E9D90087385B /* Protocols.swift */; };
+		F1ABE7E91C8303940087385B /* RxTwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABE7E81C8303940087385B /* RxTwift.swift */; };
 		F1CD30581C7347DC004121DD /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD30571C7347DC004121DD /* Tweet.swift */; };
 		F1CD305A1C734897004121DD /* Contributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD30591C734897004121DD /* Contributor.swift */; };
 		F1CD305E1C734952004121DD /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD305D1C734952004121DD /* Coordinate.swift */; };
@@ -808,7 +810,9 @@
 		F1547D861C75F6AF0060DBEF /* Symbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		F1547D881C7615F10060DBEF /* UserEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEntities.swift; sourceTree = "<group>"; };
 		F1547D8A1C761DD20060DBEF /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		F178C4011C832FCA00690972 /* Observable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Extension.swift"; sourceTree = "<group>"; };
 		F1ABE7DE1C82E9D90087385B /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		F1ABE7E81C8303940087385B /* RxTwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTwift.swift; sourceTree = "<group>"; };
 		F1CD30571C7347DC004121DD /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		F1CD30591C734897004121DD /* Contributor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contributor.swift; sourceTree = "<group>"; };
 		F1CD305D1C734952004121DD /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
@@ -1075,6 +1079,7 @@
 			children = (
 				F1DA91341C81BD32006EC914 /* Argo+Extension.swift */,
 				39C9FADDF0A8DB7ABA124DDC681B5E2C /* Dictionary+Extension.swift */,
+				F178C4011C832FCA00690972 /* Observable+Extension.swift */,
 				F8555FA8CCE873D85002BE4FF5E1856F /* Random.swift */,
 				9F394183E767D29C016E02C16BD73A75 /* String+Extension.swift */,
 				BD75D9ECD6AFEB4B4EB62AF5DBA72E67 /* Timestamp.swift */,
@@ -1221,6 +1226,7 @@
 				13F3C36CC2F1E2818445DE55D529B410 /* OAuth.swift */,
 				CBE2DCC629D904C54D1FF0C73CF7BBCF /* Request.swift */,
 				F1ABE7DE1C82E9D90087385B /* Protocols.swift */,
+				F1ABE7E81C8303940087385B /* RxTwift.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1982,6 +1988,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F178C4021C832FCA00690972 /* Observable+Extension.swift in Sources */,
 				F1547D871C75F6AF0060DBEF /* Symbol.swift in Sources */,
 				F1547D811C75D4AA0060DBEF /* Size.swift in Sources */,
 				9FEE1684C67EC36510204E456E72068E /* Dictionary+Extension.swift in Sources */,
@@ -2004,6 +2011,7 @@
 				969F43FE7CE7834BDA3F50B8956258B4 /* String+Extension.swift in Sources */,
 				E723F58CB0C004A40E379DA88006CA9F /* Timestamp.swift in Sources */,
 				F1DA91351C81BD32006EC914 /* Argo+Extension.swift in Sources */,
+				F1ABE7E91C8303940087385B /* RxTwift.swift in Sources */,
 				F1547D851C75F3180060DBEF /* UserMention.swift in Sources */,
 				F1CD30601C734BAA004121DD /* Id.swift in Sources */,
 			);

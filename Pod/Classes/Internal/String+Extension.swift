@@ -22,11 +22,19 @@ private let allowedCharactersForParams: NSCharacterSet = {
 }()
 
 internal extension String {
-    var percentEncodedForOAuth: String? {
+    internal var percentEncodedForOAuth: String? {
         return self.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharactersForOAuth)
     }
 
-    var percentEncodedForParams: String? {
+    internal var percentEncodedForParams: String? {
         return self.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharactersForParams)
+    }
+
+    internal func by<T: CustomStringConvertible>(value: T) -> (String, String?) {
+        return (self, value.description)
+    }
+
+    internal func by<T: CustomStringConvertible>(value: T?) -> (String, String?) {
+        return (self, value?.description)
     }
 }

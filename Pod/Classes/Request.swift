@@ -11,7 +11,7 @@ import RxSwift
 
 public class Request : NSObject, NSURLSessionDataDelegate {
     private let request: NSURLRequest
-    private let observer: AnyObserver<String>
+    private let observer: AnyObserver<NSData>
     private var data = NSMutableData()
 
     private lazy var session: NSURLSession = { [unowned self] in
@@ -21,7 +21,7 @@ public class Request : NSObject, NSURLSessionDataDelegate {
         return NSURLSession(configuration: config, delegate: self, delegateQueue: NSOperationQueue.mainQueue())
     }()
 
-    init(request: NSURLRequest, observer: AnyObserver<String>) {
+    init(request: NSURLRequest, observer: AnyObserver<NSData>) {
         self.request = request
         self.observer = observer
         super.init()
@@ -48,12 +48,8 @@ public class Request : NSObject, NSURLSessionDataDelegate {
         if let error = error {
             self.observer.onError(error)
         } else {
-            if let string = NSString(data: self.data, encoding: NSUTF8StringEncoding) as? String {
-                self.observer.onNext(string)
-                self.observer.onCompleted()
-            } else {
-                self.observer.onError(NSError(domain: "FIXME", code: 0, userInfo: nil))
-            }
+            self.observer.onNext(self.data)
+            self.observer.onCompleted()
         }
     }
 }

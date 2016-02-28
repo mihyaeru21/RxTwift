@@ -17,7 +17,7 @@ public class Tweet {
     public let coordinates: Coordinate?
     public let createdAt: String
     public let currentUserRetweet: Id?
-    public let entities: TweetEntities
+    public let entities: TweetEntities?
     public let favoriteCount: Int?
     public let favorited: Bool?
     public let filterLevel: String?
@@ -52,7 +52,7 @@ public class Tweet {
         coordinates: Coordinate?,
         createdAt: String,
         currentUserRetweet: Id?,
-        entities: TweetEntities,
+        entities: TweetEntities?,
         favoriteCount: Int?,
         favorited: Bool?,
         filterLevel: String?,
@@ -125,7 +125,7 @@ extension Tweet : Decodable {
             <*> json <|?  "coordinates"
             <*> json <|   "created_at"
             <*> json <|?  "current_user_retweet"
-        let b = a <*> json <|   "entities"
+        let b = a <*> json <|?  "entities"
             <*> json <|?  "favorite_count"
             <*> json <|?  "favorited"
             <*> json <|?  "filter_level"
