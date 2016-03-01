@@ -1,5 +1,5 @@
 //
-//  RxTwift.swift
+//  Api.swift
 //  Pods
 //
 //  Created by Mihyaeru on 2/28/16.
@@ -9,8 +9,10 @@
 import Foundation
 import RxSwift
 
-public class RxTwift {
+public class Api {
     let client: Client
+
+    public lazy var statuses: StatusesApi = StatusesApi(client: self.client)
 
     public init(
             consumerKey:       String,
@@ -32,8 +34,12 @@ public class RxTwift {
     }
 }
 
-// /statuses/...
-public extension RxTwift {
+public class StatusesApi {
+    private let client: Client
+    private init(client: Client) {
+        self.client = client
+    }
+
     public func getHomeTimeline(
         count count:        Int?   = nil,
         sinceId:            Int64? = nil,
