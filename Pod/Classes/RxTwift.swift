@@ -34,7 +34,7 @@ public class RxTwift {
 
 // /statuses/...
 public extension RxTwift {
-    public func homeTimeline(
+    public func getHomeTimeline(
         count count:        Int?   = nil,
         sinceId:            Int64? = nil,
         maxId:              Int64? = nil,
@@ -54,7 +54,7 @@ public extension RxTwift {
         )).decode().flatMapSequence()
     }
 
-    public func mentionsTimeline(
+    public func getMentionsTimeline(
         count count:        Int?   = nil,
         sinceId:            Int64? = nil,
         maxId:              Int64? = nil,
@@ -72,7 +72,7 @@ public extension RxTwift {
         )).decode().flatMapSequence()
     }
 
-    public func userTimeline(
+    public func getUserTimeline(
         userId userId:      Int64?  = nil,
         screenName:         String? = nil,
         count:              Int?    = nil,
