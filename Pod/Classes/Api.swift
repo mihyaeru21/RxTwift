@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 public class Api {
-    let client: Client
+    private let client: Client
 
     public lazy var statuses: StatusesApi = StatusesApi(client: self.client)
 
@@ -35,11 +35,12 @@ public class Api {
 }
 
 public class StatusesApi {
-    private let client: Client
+    internal let client: Client
     private init(client: Client) {
         self.client = client
     }
 
+    // https://dev.twitter.com/rest/reference/get/statuses/home_timeline
     public func getHomeTimeline(
         count count:        Int?   = nil,
         sinceId:            Int64? = nil,
@@ -60,6 +61,7 @@ public class StatusesApi {
         )).decode().flatMapSequence()
     }
 
+    // https://dev.twitter.com/rest/reference/get/statuses/mentions_timeline
     public func getMentionsTimeline(
         count count:        Int?   = nil,
         sinceId:            Int64? = nil,
@@ -78,6 +80,7 @@ public class StatusesApi {
         )).decode().flatMapSequence()
     }
 
+    // https://dev.twitter.com/rest/reference/get/statuses/user_timeline
     public func getUserTimeline(
         userId userId:      Int64?  = nil,
         screenName:         String? = nil,
@@ -102,6 +105,7 @@ public class StatusesApi {
         )).decode().flatMapSequence()
     }
 
+    // https://dev.twitter.com/rest/reference/get/statuses/retweets_of_me
     public func getRetweetsOfMe(
         count count:         Int?   = nil,
         sinceId:             Int64? = nil,
