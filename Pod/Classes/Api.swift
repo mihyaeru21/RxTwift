@@ -40,6 +40,21 @@ public class StatusesApi {
         self.client = client
     }
 
+    // https://dev.twitter.com/rest/reference/get/statuses/show/%3Aid
+    public func show(
+        id id:            Int64,
+        trimUser:         Bool?  = nil,
+        includeMyRetweet: Bool? = nil,
+        includeEntities:  Bool?  = nil
+    ) -> Observable<Tweet> {
+        return self.client.get("/statuses/show.json", params: Dictionary.createWithNotNil(
+            "id"                .by(id),
+            "trim_user"         .by(trimUser),
+            "include_my_retweet".by(includeMyRetweet),
+            "include_entities"  .by(includeEntities)
+        )).decode()
+    }
+
     // https://dev.twitter.com/rest/reference/get/statuses/home_timeline
     public func getHomeTimeline(
         count count:        Int?   = nil,
