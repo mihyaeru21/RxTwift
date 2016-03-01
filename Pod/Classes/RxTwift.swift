@@ -82,7 +82,6 @@ public extension RxTwift {
         excludeReplies:     Bool?   = nil,
         contributorDetails: Bool?   = nil,
         includeRts:         Bool?   = nil
-
     ) -> Observable<Tweet> {
         return self.client.get("/statuses/user_timeline.json", params: Dictionary.createWithNotNil(
             "user_id"            .by(userId),
@@ -94,6 +93,24 @@ public extension RxTwift {
             "exclude_replies"    .by(excludeReplies),
             "contributor_details".by(contributorDetails),
             "include_rts"        .by(includeRts)
+        )).decode().flatMapSequence()
+    }
+
+    public func getRetweetsOfMe(
+        count count:         Int?   = nil,
+        sinceId:             Int64? = nil,
+        maxId:               Int64? = nil,
+        trimUser:            Bool?  = nil,
+        includeEntities:     Bool?  = nil,
+        includeUserEntities: Bool?  = nil
+    ) -> Observable<Tweet> {
+        return self.client.get("/statuses/retweets_of_me.json", params: Dictionary.createWithNotNil(
+            "count"                .by(count),
+            "since_id"             .by(sinceId),
+            "max_id"               .by(maxId),
+            "trim_user"            .by(trimUser),
+            "include_entities"     .by(includeEntities),
+            "include_user_entities".by(includeUserEntities)
         )).decode().flatMapSequence()
     }
 }
