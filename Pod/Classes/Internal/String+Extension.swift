@@ -30,6 +30,14 @@ internal extension String {
         return self.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharactersForParams)
     }
 
+    internal func by(value: String) -> (String, String?) {
+        return (self, value)
+    }
+
+    internal func by(value: String?) -> (String, String?) {
+        return (self, value)
+    }
+
     internal func by<T: CustomStringConvertible>(value: T) -> (String, String?) {
         return (self, value.description)
     }

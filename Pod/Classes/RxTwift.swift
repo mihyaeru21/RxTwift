@@ -71,4 +71,29 @@ public extension RxTwift {
             "include_entities"   .by(includeEntities)
         )).decode().flatMapSequence()
     }
+
+    public func userTimeline(
+        userId userId:      Int64?  = nil,
+        screenName:         String? = nil,
+        count:              Int?    = nil,
+        sinceId:            Int64?  = nil,
+        maxId:              Int64?  = nil,
+        trimUser:           Bool?   = nil,
+        excludeReplies:     Bool?   = nil,
+        contributorDetails: Bool?   = nil,
+        includeRts:         Bool?   = nil
+
+    ) -> Observable<Tweet> {
+        return self.client.get("/statuses/user_timeline.json", params: Dictionary.createWithNotNil(
+            "user_id"            .by(userId),
+            "screen_name"        .by(screenName),
+            "count"              .by(count),
+            "since_id"           .by(sinceId),
+            "max_id"             .by(maxId),
+            "trim_user"          .by(trimUser),
+            "exclude_replies"    .by(excludeReplies),
+            "contributor_details".by(contributorDetails),
+            "include_rts"        .by(includeRts)
+        )).decode().flatMapSequence()
+    }
 }
