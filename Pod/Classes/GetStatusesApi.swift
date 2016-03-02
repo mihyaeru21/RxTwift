@@ -111,6 +111,18 @@ public class GetStatusesApi {
         )).decode().flatMapSequence()
     }
 
+    // https://dev.twitter.com/rest/reference/get/statuses/retweets/%3Aid
+    public func retweets(
+        id id:    Int64,
+        count:    Int?  = nil,
+        trimUser: Bool? = nil
+    ) -> Observable<Tweet> {
+        return self.client.get("/statuses/retweets/\(id).json", params: Dictionary.createWithNotNil(
+            "count"    .by(count),
+            "trim_user".by(trimUser)
+        )).decode().flatMapSequence()
+    }
+
     // https://dev.twitter.com/rest/reference/get/statuses/retweets_of_me
     public func retweetsOfMe(
         count count:         Int?   = nil,
