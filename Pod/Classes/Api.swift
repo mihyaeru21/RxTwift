@@ -55,6 +55,22 @@ public class StatusesApi {
         )).decode()
     }
 
+    // https://dev.twitter.com/rest/reference/get/statuses/lookup
+    public func lookup(
+        ids ids:          [Int64],
+        trimUser:         Bool?  = nil,
+        includeEntities:  Bool?  = nil
+    ) -> Observable<Tweet> {
+        if ids.count < 1 {
+            return Observable.empty()
+        }
+        return self.client.get("/statuses/lookup.json", params: Dictionary.createWithNotNil(
+            "id"              .by(ids.map({ $0.description }).joinWithSeparator(",")),
+            "trim_user"       .by(trimUser),
+            "include_entities".by(includeEntities)
+        )).decode().flatMapSequence()
+    }
+
     // https://dev.twitter.com/rest/reference/get/statuses/home_timeline
     public func getHomeTimeline(
         count count:        Int?   = nil,
