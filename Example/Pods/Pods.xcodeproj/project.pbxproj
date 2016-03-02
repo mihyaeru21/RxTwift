@@ -314,6 +314,7 @@
 		F1547D8B1C761DD20060DBEF /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1547D8A1C761DD20060DBEF /* Place.swift */; };
 		F178C4021C832FCA00690972 /* Observable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178C4011C832FCA00690972 /* Observable+Extension.swift */; };
 		F19F371AAA7DD83795BABB07100C9904 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A7A1C520B639D90B29877A33E81A6 /* JSON.swift */; };
+		F1A3588B1C872D61002CB679 /* GetStatusesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3588A1C872D61002CB679 /* GetStatusesApi.swift */; };
 		F1ABE7DF1C82E9D90087385B /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABE7DE1C82E9D90087385B /* Protocols.swift */; };
 		F1ABE7E91C8303940087385B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1ABE7E81C8303940087385B /* Api.swift */; };
 		F1CD30581C7347DC004121DD /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD30571C7347DC004121DD /* Tweet.swift */; };
@@ -811,6 +812,7 @@
 		F1547D881C7615F10060DBEF /* UserEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEntities.swift; sourceTree = "<group>"; };
 		F1547D8A1C761DD20060DBEF /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		F178C4011C832FCA00690972 /* Observable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Extension.swift"; sourceTree = "<group>"; };
+		F1A3588A1C872D61002CB679 /* GetStatusesApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStatusesApi.swift; sourceTree = "<group>"; };
 		F1ABE7DE1C82E9D90087385B /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		F1ABE7E81C8303940087385B /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		F1CD30571C7347DC004121DD /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
@@ -1227,6 +1229,7 @@
 				CBE2DCC629D904C54D1FF0C73CF7BBCF /* Request.swift */,
 				F1ABE7DE1C82E9D90087385B /* Protocols.swift */,
 				F1ABE7E81C8303940087385B /* Api.swift */,
+				F1A3588A1C872D61002CB679 /* GetStatusesApi.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1998,6 +2001,7 @@
 				F1CD305A1C734897004121DD /* Contributor.swift in Sources */,
 				F1547D831C75F1260060DBEF /* Url.swift in Sources */,
 				F1CD305E1C734952004121DD /* Coordinate.swift in Sources */,
+				F1A3588B1C872D61002CB679 /* GetStatusesApi.swift in Sources */,
 				F1CD30581C7347DC004121DD /* Tweet.swift in Sources */,
 				F1547D8B1C761DD20060DBEF /* Place.swift in Sources */,
 				F1547D7F1C75CE570060DBEF /* Medium.swift in Sources */,
