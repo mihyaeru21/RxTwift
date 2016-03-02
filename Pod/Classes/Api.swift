@@ -72,7 +72,7 @@ public class StatusesApi {
     }
 
     // https://dev.twitter.com/rest/reference/get/statuses/home_timeline
-    public func getHomeTimeline(
+    public func homeTimeline(
         count count:        Int?   = nil,
         sinceId:            Int64? = nil,
         maxId:              Int64? = nil,
@@ -93,7 +93,7 @@ public class StatusesApi {
     }
 
     // https://dev.twitter.com/rest/reference/get/statuses/mentions_timeline
-    public func getMentionsTimeline(
+    public func mentionsTimeline(
         count count:        Int?   = nil,
         sinceId:            Int64? = nil,
         maxId:              Int64? = nil,
@@ -112,7 +112,7 @@ public class StatusesApi {
     }
 
     // https://dev.twitter.com/rest/reference/get/statuses/user_timeline
-    public func getUserTimeline(
+    public func userTimeline(
         userId userId:      Int64?  = nil,
         screenName:         String? = nil,
         count:              Int?    = nil,
@@ -137,7 +137,7 @@ public class StatusesApi {
     }
 
     // https://dev.twitter.com/rest/reference/get/statuses/retweets_of_me
-    public func getRetweetsOfMe(
+    public func retweetsOfMe(
         count count:         Int?   = nil,
         sinceId:             Int64? = nil,
         maxId:               Int64? = nil,
