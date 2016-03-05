@@ -39,4 +39,14 @@ public class PostStatusesApi {
             "media_ids"            .by(mediaIds?.joinedString)
         )).decode()
     }
+
+    // https://dev.twitter.com/rest/reference/post/statuses/destroy/%3Aid
+    public func destroy(
+        id id:    Int64,
+        trimUser: Bool? = nil
+    ) -> Observable<Tweet> {
+        return self.client.post("/statuses/destroy/\(id).json", params: Dictionary.createWithNotNil(
+            "trim_user".by(trimUser)
+        )).decode()
+    }
 }
