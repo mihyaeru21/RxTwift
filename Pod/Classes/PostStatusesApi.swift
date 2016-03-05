@@ -36,7 +36,7 @@ public class PostStatusesApi {
             "place_id"             .by(placeId),
             "display_coordinates"  .by(displayCoordinates),
             "trim_user"            .by(trimUser),
-            "media_ids"            .by(mediaIds?.map({ $0.description }).joinWithSeparator(","))
+            "media_ids"            .by(mediaIds?.joinedString)
         )).decode()
     }
 }

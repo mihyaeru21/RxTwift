@@ -40,7 +40,7 @@ public class GetStatusesApi {
             return Observable.empty()
         }
         return self.client.get("/statuses/lookup.json", params: Dictionary.createWithNotNil(
-            "id"              .by(ids.map({ $0.description }).joinWithSeparator(",")),
+            "id"              .by(ids.joinedString),
             "trim_user"       .by(trimUser),
             "include_entities".by(includeEntities)
         )).decode().flatMapSequence()
