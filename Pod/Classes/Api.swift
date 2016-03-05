@@ -13,6 +13,7 @@ public class Api {
     private let client: Client
 
     public lazy var get: GetApi = GetApi(client: self.client)
+    public lazy var post: PostApi = PostApi(client: self.client)
 
     public init(
             consumerKey:       String,
@@ -41,4 +42,13 @@ public class GetApi {
     }
 
     public lazy var statuses: GetStatusesApi = GetStatusesApi(client: self.client)
+}
+
+public class PostApi {
+    internal let client: Client
+    private init(client: Client) {
+        self.client = client
+    }
+
+    public lazy var statuses: PostStatusesApi = PostStatusesApi(client: self.client)
 }
