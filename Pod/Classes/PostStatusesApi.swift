@@ -49,4 +49,14 @@ public class PostStatusesApi {
             "trim_user".by(trimUser)
         )).decode()
     }
+
+    // https://dev.twitter.com/rest/reference/post/statuses/retweet/%3Aid
+    public func retweet(
+        id id:    Int64,
+        trimUser: Bool? = nil
+    ) -> Observable<Tweet> {
+        return self.client.post("/statuses/retweet/\(id).json", params: Dictionary.createWithNotNil(
+            "trim_user".by(trimUser)
+        )).decode()
+    }
 }
