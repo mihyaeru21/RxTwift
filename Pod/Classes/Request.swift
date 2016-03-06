@@ -46,7 +46,7 @@ public class Request : NSObject, NSURLSessionDataDelegate {
 
     public func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
         if let error = error {
-            self.observer.onError(error)
+            self.observer.onError(Exception(message: "network error.", originalError: error))
         } else {
             self.observer.onNext(self.data)
             self.observer.onCompleted()

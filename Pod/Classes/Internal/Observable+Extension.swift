@@ -27,7 +27,7 @@ internal extension Observable where Element: SequenceType {
 internal extension Observable {
     internal func decode<T: Decodable where T == T.DecodedType>() -> Observable<T> {
         return self.map { (raw: Element) -> T in
-            let json = try self.decodeToJSON(raw)
+            let json = try self.decodeToJsonOrThrowException(raw)
             let decoded: Decoded<T> = Argo.decode(json)
             switch decoded {
             case .Success(let value): return value
@@ -38,7 +38,7 @@ internal extension Observable {
 
     internal func decode<T: Decodable where T == T.DecodedType>() -> Observable<[T]> {
         return self.map { (raw: Element) -> [T] in
-            let json = try self.decodeToJSON(raw)
+            let json = try self.decodeToJsonOrThrowException(raw)
             let decoded: Decoded<[T]> = Argo.decode(json)
             switch decoded {
             case .Success(let values): return values
@@ -47,10 +47,25 @@ internal extension Observable {
         }
     }
 
-    private func decodeToJSON(raw: Element) throws -> AnyObject {
+    // TODO: extract
+    private func decodeToJsonOrThrowException(raw: Element) throws -> AnyObject {
+        let json = try self.decodeToJson(raw)
+        guard let errorJson = json as? Dictionary<String, AnyObject> where errorJson["errors"] != nil else {
+            return json
+        }
+
+        let decoded: Decoded<Exception> = Argo.decode(errorJson)
+        switch decoded {
+        case .Success(let value): throw value
+        case .Failure(let error): throw Exception(message: "decoding error for twitter errors.", originalError: error)
+        }
+    }
+
+    // TODO: extract
+    private func decodeToJson(raw: Element) throws -> AnyObject {
         if let data = raw as? NSData {
             return try NSJSONSerialization.JSONObjectWithData(data, options: [])
         }
-        throw NSError(domain: "FIXME: make error", code: 0, userInfo: nil)
+        throw Exception(message: "decoding json error.")
     }
 }
