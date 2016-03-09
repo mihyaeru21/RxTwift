@@ -82,4 +82,19 @@ public class GetListsApi {
             "cursor"     .by(cursor)
         )).decode()
     }
+
+    // https://dev.twitter.com/rest/reference/get/lists/ownerships
+    public func ownerships(
+        userId userId: Int64?  = nil,
+        screenName:    String? = nil,
+        count:         Int?    = nil,
+        cursor:        Int64?  = nil
+    ) -> Observable<Lists> {
+        return self.client.get("/lists/ownerships.json", params: Dictionary.createWithNotNil(
+            "user_id"    .by(userId),
+            "screen_name".by(screenName),
+            "count"      .by(count),
+            "cursor"     .by(cursor)
+        )).decode()
+    }
 }
