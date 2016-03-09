@@ -114,4 +114,27 @@ public class GetListsApi {
             "filter_to_owned_lists".by(cursor)
         )).decode()
     }
+
+    // https://dev.twitter.com/rest/reference/get/lists/subscribers
+    public func subscribers(
+        listId listId:   Int64?  = nil,
+        slug:            String? = nil,
+        ownerScreenName: String? = nil,
+        ownerId:         Int64?  = nil,
+        count:           Int?    = nil,
+        cursor:          Int64?  = nil,
+        includeEntities: Bool?   = nil,
+        skipStatus:      Bool?   = nil
+    ) -> Observable<Users> {
+        return self.client.get("/lists/subscribers.json", params: Dictionary.createWithNotNil(
+            "list_id"          .by(listId),
+            "slug"             .by(slug),
+            "owner_screen_name".by(ownerScreenName),
+            "owner_id"         .by(ownerId),
+            "count"            .by(count),
+            "cursor"           .by(cursor),
+            "include_entities" .by(includeEntities),
+            "skip_status"      .by(skipStatus)
+        )).decode()
+    }
 }

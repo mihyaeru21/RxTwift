@@ -315,6 +315,7 @@
 		F17322D91C8F145500A44AC3 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17322D81C8F145500A44AC3 /* List.swift */; };
 		F17322DC1C9043A000A44AC3 /* GetListsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17322DB1C9043A000A44AC3 /* GetListsApi.swift */; };
 		F17322DE1C90550C00A44AC3 /* Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17322DD1C90550C00A44AC3 /* Lists.swift */; };
+		F17322E01C90678400A44AC3 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17322DF1C90678400A44AC3 /* Users.swift */; };
 		F178C4021C832FCA00690972 /* Observable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178C4011C832FCA00690972 /* Observable+Extension.swift */; };
 		F19F371AAA7DD83795BABB07100C9904 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A7A1C520B639D90B29877A33E81A6 /* JSON.swift */; };
 		F1A3588B1C872D61002CB679 /* GetStatusesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3588A1C872D61002CB679 /* GetStatusesApi.swift */; };
@@ -821,6 +822,7 @@
 		F17322D81C8F145500A44AC3 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		F17322DB1C9043A000A44AC3 /* GetListsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetListsApi.swift; sourceTree = "<group>"; };
 		F17322DD1C90550C00A44AC3 /* Lists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lists.swift; sourceTree = "<group>"; };
+		F17322DF1C90678400A44AC3 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		F178C4011C832FCA00690972 /* Observable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Extension.swift"; sourceTree = "<group>"; };
 		F1A3588A1C872D61002CB679 /* GetStatusesApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStatusesApi.swift; sourceTree = "<group>"; };
 		F1A3588C1C8AD3F8002CB679 /* PostStatusesApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostStatusesApi.swift; sourceTree = "<group>"; };
@@ -1521,6 +1523,7 @@
 				F1547D881C7615F10060DBEF /* UserEntities.swift */,
 				F1547D841C75F3180060DBEF /* UserMention.swift */,
 				F17322D81C8F145500A44AC3 /* List.swift */,
+				F17322DF1C90678400A44AC3 /* Users.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -2039,6 +2042,7 @@
 				4AC55BEE405ABC38534BE638EA414516 /* OAuth.swift in Sources */,
 				F1547D7B1C75CC300060DBEF /* TweetEntities.swift in Sources */,
 				CFA0658F7951DA743DB1140E6FEC0C9F /* Request.swift in Sources */,
+				F17322E01C90678400A44AC3 /* Users.swift in Sources */,
 				969F43FE7CE7834BDA3F50B8956258B4 /* String+Extension.swift in Sources */,
 				E723F58CB0C004A40E379DA88006CA9F /* Timestamp.swift in Sources */,
 				F1DA91351C81BD32006EC914 /* Argo+Extension.swift in Sources */,
