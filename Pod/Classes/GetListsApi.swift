@@ -67,4 +67,19 @@ public class GetListsApi {
             "include_rts"      .by(includeRts)
         )).decode().flatMapSequence()
     }
+
+    // https://dev.twitter.com/rest/reference/get/lists/subscriptions
+    public func subscriptions(
+        userId userId: Int64?  = nil,
+        screenName:    String? = nil,
+        count:         Int?    = nil,
+        cursor:        Int64?  = nil
+    ) -> Observable<Lists> {
+        return self.client.get("/lists/subscriptions.json", params: Dictionary.createWithNotNil(
+            "user_id"    .by(userId),
+            "screen_name".by(screenName),
+            "count"      .by(count),
+            "cursor"     .by(cursor)
+        )).decode()
+    }
 }

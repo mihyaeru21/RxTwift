@@ -314,6 +314,7 @@
 		F1547D8B1C761DD20060DBEF /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1547D8A1C761DD20060DBEF /* Place.swift */; };
 		F17322D91C8F145500A44AC3 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17322D81C8F145500A44AC3 /* List.swift */; };
 		F17322DC1C9043A000A44AC3 /* GetListsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17322DB1C9043A000A44AC3 /* GetListsApi.swift */; };
+		F17322DE1C90550C00A44AC3 /* Lists.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17322DD1C90550C00A44AC3 /* Lists.swift */; };
 		F178C4021C832FCA00690972 /* Observable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178C4011C832FCA00690972 /* Observable+Extension.swift */; };
 		F19F371AAA7DD83795BABB07100C9904 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A7A1C520B639D90B29877A33E81A6 /* JSON.swift */; };
 		F1A3588B1C872D61002CB679 /* GetStatusesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3588A1C872D61002CB679 /* GetStatusesApi.swift */; };
@@ -819,6 +820,7 @@
 		F1547D8A1C761DD20060DBEF /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		F17322D81C8F145500A44AC3 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		F17322DB1C9043A000A44AC3 /* GetListsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetListsApi.swift; sourceTree = "<group>"; };
+		F17322DD1C90550C00A44AC3 /* Lists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lists.swift; sourceTree = "<group>"; };
 		F178C4011C832FCA00690972 /* Observable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Extension.swift"; sourceTree = "<group>"; };
 		F1A3588A1C872D61002CB679 /* GetStatusesApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStatusesApi.swift; sourceTree = "<group>"; };
 		F1A3588C1C8AD3F8002CB679 /* PostStatusesApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostStatusesApi.swift; sourceTree = "<group>"; };
@@ -1504,6 +1506,7 @@
 			children = (
 				F1CD30591C734897004121DD /* Contributor.swift */,
 				F1CD305D1C734952004121DD /* Coordinate.swift */,
+				F17322DD1C90550C00A44AC3 /* Lists.swift */,
 				F1A358931C8BCDE2002CB679 /* Error.swift */,
 				F1547D7C1C75CCAD0060DBEF /* Hashtag.swift */,
 				F1CD305F1C734BAA004121DD /* Id.swift */,
@@ -2014,6 +2017,7 @@
 				F1A3588F1C8ADF58002CB679 /* Array+Extension.swift in Sources */,
 				F178C4021C832FCA00690972 /* Observable+Extension.swift in Sources */,
 				F1547D871C75F6AF0060DBEF /* Symbol.swift in Sources */,
+				F17322DE1C90550C00A44AC3 /* Lists.swift in Sources */,
 				F1547D811C75D4AA0060DBEF /* Size.swift in Sources */,
 				F17322DC1C9043A000A44AC3 /* GetListsApi.swift in Sources */,
 				F1A358961C8BCF57002CB679 /* Exception.swift in Sources */,
