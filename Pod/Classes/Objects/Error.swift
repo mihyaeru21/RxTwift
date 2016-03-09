@@ -10,6 +10,7 @@ import Foundation
 import Argo
 import Curry
 
+// https://dev.twitter.com/overview/api/response-codes
 public struct Error {
     let code:    Int
     let message: String

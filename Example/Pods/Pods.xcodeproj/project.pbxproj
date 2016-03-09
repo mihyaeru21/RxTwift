@@ -312,6 +312,8 @@
 		F1547D871C75F6AF0060DBEF /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1547D861C75F6AF0060DBEF /* Symbol.swift */; };
 		F1547D891C7615F10060DBEF /* UserEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1547D881C7615F10060DBEF /* UserEntities.swift */; };
 		F1547D8B1C761DD20060DBEF /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1547D8A1C761DD20060DBEF /* Place.swift */; };
+		F17322D91C8F145500A44AC3 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17322D81C8F145500A44AC3 /* List.swift */; };
+		F17322DC1C9043A000A44AC3 /* GetListsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17322DB1C9043A000A44AC3 /* GetListsApi.swift */; };
 		F178C4021C832FCA00690972 /* Observable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F178C4011C832FCA00690972 /* Observable+Extension.swift */; };
 		F19F371AAA7DD83795BABB07100C9904 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5A7A1C520B639D90B29877A33E81A6 /* JSON.swift */; };
 		F1A3588B1C872D61002CB679 /* GetStatusesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A3588A1C872D61002CB679 /* GetStatusesApi.swift */; };
@@ -815,6 +817,8 @@
 		F1547D861C75F6AF0060DBEF /* Symbol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
 		F1547D881C7615F10060DBEF /* UserEntities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEntities.swift; sourceTree = "<group>"; };
 		F1547D8A1C761DD20060DBEF /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		F17322D81C8F145500A44AC3 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		F17322DB1C9043A000A44AC3 /* GetListsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetListsApi.swift; sourceTree = "<group>"; };
 		F178C4011C832FCA00690972 /* Observable+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Extension.swift"; sourceTree = "<group>"; };
 		F1A3588A1C872D61002CB679 /* GetStatusesApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStatusesApi.swift; sourceTree = "<group>"; };
 		F1A3588C1C8AD3F8002CB679 /* PostStatusesApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostStatusesApi.swift; sourceTree = "<group>"; };
@@ -1238,6 +1242,7 @@
 				CBE2DCC629D904C54D1FF0C73CF7BBCF /* Request.swift */,
 				F1ABE7DE1C82E9D90087385B /* Protocols.swift */,
 				F1ABE7E81C8303940087385B /* Api.swift */,
+				F17322DB1C9043A000A44AC3 /* GetListsApi.swift */,
 				F1A3588A1C872D61002CB679 /* GetStatusesApi.swift */,
 				F1A3588C1C8AD3F8002CB679 /* PostStatusesApi.swift */,
 				F1A358951C8BCF57002CB679 /* Exception.swift */,
@@ -1512,6 +1517,7 @@
 				F1547D781C75C3E80060DBEF /* User.swift */,
 				F1547D881C7615F10060DBEF /* UserEntities.swift */,
 				F1547D841C75F3180060DBEF /* UserMention.swift */,
+				F17322D81C8F145500A44AC3 /* List.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -2004,10 +2010,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1A3588D1C8AD3F8002CB679 /* PostStatusesApi.swift in Sources */,
+				F17322D91C8F145500A44AC3 /* List.swift in Sources */,
 				F1A3588F1C8ADF58002CB679 /* Array+Extension.swift in Sources */,
 				F178C4021C832FCA00690972 /* Observable+Extension.swift in Sources */,
 				F1547D871C75F6AF0060DBEF /* Symbol.swift in Sources */,
 				F1547D811C75D4AA0060DBEF /* Size.swift in Sources */,
+				F17322DC1C9043A000A44AC3 /* GetListsApi.swift in Sources */,
 				F1A358961C8BCF57002CB679 /* Exception.swift in Sources */,
 				9FEE1684C67EC36510204E456E72068E /* Dictionary+Extension.swift in Sources */,
 				BD49D0C09E4B326644A35DAF6DE70395 /* Random.swift in Sources */,
