@@ -137,4 +137,27 @@ public class GetListsApi {
             "skip_status"      .by(skipStatus)
         )).decode()
     }
+
+    // https://dev.twitter.com/rest/reference/get/lists/subscribers/show
+    public func subscribersShow(
+        listId listId:   Int64?  = nil,
+        slug:            String? = nil,
+        ownerScreenName: String? = nil,
+        ownerId:         Int64?  = nil,
+        userId:          Int64?  = nil,
+        screenName:      String? = nil,
+        includeEntities: Bool?   = nil,
+        skipStatus:      Bool?   = nil
+    ) -> Observable<User> {
+        return self.client.get("/lists/subscribers/show.json", params: Dictionary.createWithNotNil(
+            "list_id"          .by(listId),
+            "slug"             .by(slug),
+            "owner_screen_name".by(ownerScreenName),
+            "owner_id"         .by(ownerId),
+            "user_id"          .by(userId),
+            "screen_name"      .by(screenName),
+            "include_entities" .by(includeEntities),
+            "skip_status"      .by(skipStatus)
+        )).decode()
+    }
 }
