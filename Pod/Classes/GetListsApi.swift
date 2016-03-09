@@ -42,4 +42,29 @@ public class GetListsApi {
             "owner_id"         .by(ownerId)
         )).decode()
     }
+
+    // https://dev.twitter.com/rest/reference/get/lists/statuses
+    public func statuses(
+        listId listId:   Int64?  = nil,
+        slug:            String? = nil,
+        ownerScreenName: String? = nil,
+        ownerId:         Int64?  = nil,
+        sinceId:         Int64?  = nil,
+        maxId:           Int64?  = nil,
+        count:           Int?    = nil,
+        includeEntities: Bool?   = nil,
+        includeRts:      Bool?   = nil
+    ) -> Observable<Tweet> {
+        return self.client.get("/lists/statuses.json", params: Dictionary.createWithNotNil(
+            "list_id"          .by(listId),
+            "slug"             .by(slug),
+            "owner_screen_name".by(ownerScreenName),
+            "owner_id"         .by(ownerId),
+            "since_id"         .by(sinceId),
+            "max_id"           .by(maxId),
+            "count"            .by(count),
+            "include_entities" .by(includeEntities),
+            "include_rts"      .by(includeRts)
+        )).decode().flatMapSequence()
+    }
 }
