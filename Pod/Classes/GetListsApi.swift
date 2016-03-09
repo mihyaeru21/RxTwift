@@ -27,4 +27,19 @@ public class GetListsApi {
             "reverse"    .by(reverse)
         )).decode().flatMapSequence()
     }
+
+    // https://dev.twitter.com/rest/reference/get/lists/show
+    public func show(
+        listId listId:   Int64?  = nil,
+        slug:            String? = nil,
+        ownerScreenName: String? = nil,
+        ownerId:         Int64?  = nil
+    ) -> Observable<List> {
+        return self.client.get("/lists/show.json", params: Dictionary.createWithNotNil(
+            "list_id"          .by(listId),
+            "slug"             .by(slug),
+            "owner_screen_name".by(ownerScreenName),
+            "owner_id"         .by(ownerId)
+        )).decode()
+    }
 }
