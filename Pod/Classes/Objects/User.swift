@@ -47,7 +47,7 @@ public struct User {
     public let protected:                      Bool
     public let screenName:                     String
     public let showAllInlineMedia:             Bool?
-    public let status:                         [Tweet]?
+    public let status:                         Tweet?
     public let statusesCount:                  Int
     public let timeZone:                       String?
     public let url:                            String?
@@ -95,7 +95,7 @@ extension User : Decodable {
             <*> json <|   "protected"
             <*> json <|   "screen_name"
             <*> json <|?  "show_all_inline_media"
-            <*> json <||? "status"
+            <*> json <|?  "status"
             <*> json <|   "statuses_count"
             <*> json <|?  "time_zone"
         return e <*> json <|?  "url"
