@@ -328,7 +328,6 @@
 		F1CD30581C7347DC004121DD /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD30571C7347DC004121DD /* Tweet.swift */; };
 		F1CD305A1C734897004121DD /* Contributor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD30591C734897004121DD /* Contributor.swift */; };
 		F1CD305E1C734952004121DD /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD305D1C734952004121DD /* Coordinate.swift */; };
-		F1CD30601C734BAA004121DD /* Id.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD305F1C734BAA004121DD /* Id.swift */; };
 		F1D4A8A1FC68EFA7F45945908D70A352 /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B73F471BB7E60F7D954DCB19240C33 /* BeNil.swift */; };
 		F1DA91351C81BD32006EC914 /* Argo+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA91341C81BD32006EC914 /* Argo+Extension.swift */; };
 		F23946D3C178FA99FA0F35D98DA65571 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B441C1BDB7ABD5556A738EF86FE4ABB /* RxSwift.framework */; };
@@ -834,7 +833,6 @@
 		F1CD30571C7347DC004121DD /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		F1CD30591C734897004121DD /* Contributor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contributor.swift; sourceTree = "<group>"; };
 		F1CD305D1C734952004121DD /* Coordinate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
-		F1CD305F1C734BAA004121DD /* Id.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Id.swift; sourceTree = "<group>"; };
 		F1DA91341C81BD32006EC914 /* Argo+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Argo+Extension.swift"; sourceTree = "<group>"; };
 		F345019B3C3773A4A485A8F10C7D8296 /* SynchronizedUnsubscribeType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SynchronizedUnsubscribeType.swift; path = RxSwift/Concurrency/SynchronizedUnsubscribeType.swift; sourceTree = "<group>"; };
 		F3AB7A75BBF686813DE401E893F9383A /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Nimble/DSL.swift; sourceTree = "<group>"; };
@@ -1511,7 +1509,6 @@
 				F17322DD1C90550C00A44AC3 /* Lists.swift */,
 				F1A358931C8BCDE2002CB679 /* Error.swift */,
 				F1547D7C1C75CCAD0060DBEF /* Hashtag.swift */,
-				F1CD305F1C734BAA004121DD /* Id.swift */,
 				F1547D7E1C75CE570060DBEF /* Medium.swift */,
 				F1547D8A1C761DD20060DBEF /* Place.swift */,
 				F1547D801C75D4AA0060DBEF /* Size.swift */,
@@ -1522,8 +1519,8 @@
 				F1547D781C75C3E80060DBEF /* User.swift */,
 				F1547D881C7615F10060DBEF /* UserEntities.swift */,
 				F1547D841C75F3180060DBEF /* UserMention.swift */,
-				F17322D81C8F145500A44AC3 /* List.swift */,
 				F17322DF1C90678400A44AC3 /* Users.swift */,
+				F17322D81C8F145500A44AC3 /* List.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -2049,7 +2046,6 @@
 				F1ABE7E91C8303940087385B /* Api.swift in Sources */,
 				F1547D851C75F3180060DBEF /* UserMention.swift in Sources */,
 				F1A358941C8BCDE2002CB679 /* Error.swift in Sources */,
-				F1CD30601C734BAA004121DD /* Id.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

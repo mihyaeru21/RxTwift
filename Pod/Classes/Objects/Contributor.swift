@@ -13,7 +13,6 @@ import Curry
 // https://dev.twitter.com/overview/api/tweets#obj-contributors
 public struct Contributor {
     public let id:         Int64
-    public let idStr:      String
     public let screenName: String
 }
 
@@ -21,7 +20,6 @@ extension Contributor : Decodable {
     public static func decode(json: JSON) -> Decoded<Contributor> {
         return curry(Contributor.init)
             <^> json <| "id"
-            <*> json <| "id_str"
             <*> json <| "screen_name"
     }
 }

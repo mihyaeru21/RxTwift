@@ -16,7 +16,6 @@ public struct List {
     public let following: Bool
     public let fullName: String
     public let id: Int64
-    public let idStr: String
     public let memberCount: Int
     public let mode: String
     public let name: String
@@ -34,7 +33,6 @@ extension List : Decodable {
             <*> json <| "following"
             <*> json <| "full_name"
             <*> json <| "id"
-            <*> json <| "id_str"
         return a <*> json <| "member_count"
             <*> json <| "mode"
             <*> json <| "name"

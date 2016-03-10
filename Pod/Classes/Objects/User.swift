@@ -25,7 +25,6 @@ public struct User {
     public let friendsCount:                   Int
     public let geoEnabled:                     Bool
     public let id:                             Int64
-    public let idStr:                          String
     public let isTranslator:                   Bool
     public let lang:                           String
     public let listedCount:                    Int
@@ -33,11 +32,9 @@ public struct User {
     public let name:                           String
     public let notifications:                  Bool // deprecated
     public let profileBackgroundColor:         String
-    public let profileBackgroundImageUrl:      String
     public let profileBackgroundImageUrlHttps: String
     public let profileBackgroundTile:          Bool
     public let profileBannerUrl:               String?
-    public let profileImageUrl:                String
     public let profileImageUrlHttps:           String
     public let profileLinkColor:               String
     public let profileSidebarBorderColor:      String
@@ -73,7 +70,6 @@ extension User : Decodable {
             <*> json <|   "friends_count"
             <*> json <|   "geo_enabled"
             <*> json <|   "id"
-            <*> json <|   "id_str"
         let c = b <*> json <|   "is_translator"
             <*> json <|   "lang"
             <*> json <|   "listed_count"
@@ -81,11 +77,9 @@ extension User : Decodable {
             <*> json <|   "name"
             <*> json <|   "notifications"
             <*> json <|   "profile_background_color"
-            <*> json <|   "profile_background_image_url"
             <*> json <|   "profile_background_image_url_https"
         let d = c <*> json <|   "profile_background_tile"
             <*> json <|?  "profile_banner_url"
-            <*> json <|   "profile_image_url"
             <*> json <|   "profile_image_url_https"
             <*> json <|   "profile_link_color"
             <*> json <|   "profile_sidebar_border_color"
