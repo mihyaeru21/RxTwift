@@ -10,67 +10,70 @@ import Foundation
 
 public class Crypto {
     public static func sha1(message: String) -> String {
-        var hashes: [UInt32] = [0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0]
-
-        // Process the message in successive 512-bit chunks:
+        var hash = Hash()
         for chunk in Message(message).chunks {
-            // break chunk into sixteen 32-bit big-endian words
             var w = Array<UInt32>(count: 80, repeatedValue: 0)
-            for var i = 0; i < 16; i++ {
-                w[i] = chunk[uint32: i]
+            for i in 0..<80 {
+                switch i {
+                case 0...15: w[i] = chunk[uint32: i]
+                default:     w[i] = (w[i-3] ^ w[i-8] ^ w[i-14] ^ w[i-16]).rotateLeft(1)
+                }
             }
 
-            // Extend the sixteen 32-bit words into eighty 32-bit words:
-            for var i = 16; i < 80; i++ {
-                w[i] = (w[i - 3] ^ w[i - 8] ^ w[i - 14] ^ w[i - 16]).rotateLeft(1)
-            }
-
-            // Main loop:
-            var (a, b, c, d, e) = (hashes[0], hashes[1], hashes[2], hashes[3], hashes[4])
+            var (a, b, c, d, e) = hash.values
             var f, k: UInt32
-            for var i = 0; i < 80; i++ {
+            for i in 0..<80 {
                 switch i {
                 case 0...19:
                     f = (b & c) | ((~b) & d)
-                    k = 0x5A827999
+                    k = 0x5a827999
                 case 20...39:
                     f = b ^ c ^ d
-                    k = 0x6ED9EBA1
+                    k = 0x6ed9eba1
                 case 40...59:
                     f = (b & c) | (b & d) | (c & d)
-                    k = 0x8F1BBCDC
+                    k = 0x8f1bbcdc
                 default:
                     f = b ^ c ^ d
-                    k = 0xCA62C1D6
+                    k = 0xca62c1d6
                 }
-
                 let temp = a.rotateLeft(5) &+ f &+ e &+ k &+ w[i]
-                e = d
-                d = c
-                c = b.rotateLeft(30)
-                b = a
-                a = temp
+                (a, b, c, d, e) = (temp, a, b.rotateLeft(30), c, d)
             }
 
-            // Add this chunk's hash to result so far:
-            hashes[0] = hashes[0] &+ a
-            hashes[1] = hashes[1] &+ b
-            hashes[2] = hashes[2] &+ c
-            hashes[3] = hashes[3] &+ d
-            hashes[4] = hashes[4] &+ e
+            hash.add((a, b, c, d, e))
         }
 
-        // Produce the final hash value (big-endian) as a 160 bit number:
+        return hash.result.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+    }
+}
+
+private struct Hash {
+    private var hashes: [UInt32] = [0x67452301, 0xefcdab89, 0x98badcfe, 0x10325476, 0xc3d2e1f0]
+
+    private var values: (UInt32, UInt32, UInt32, UInt32, UInt32) {
+        return (self.hashes[0], self.hashes[1], self.hashes[2], self.hashes[3], self.hashes[4])
+    }
+
+    private mutating func add(values: (UInt32, UInt32, UInt32, UInt32, UInt32)) {
+        self.hashes[0] = self.hashes[0] &+ values.0
+        self.hashes[1] = self.hashes[1] &+ values.1
+        self.hashes[2] = self.hashes[2] &+ values.2
+        self.hashes[3] = self.hashes[3] &+ values.3
+        self.hashes[4] = self.hashes[4] &+ values.4
+    }
+
+    // 160 bit number
+    private var result: NSData {
         var index = 0
         var bytes = Array<UInt8>(count: 20, repeatedValue: 0)
-        for h in hashes {
+        for h in self.hashes {
             bytes[index++] = UInt8(h >> 24 & 0xff)
             bytes[index++] = UInt8(h >> 16 & 0xff)
             bytes[index++] = UInt8(h >> 8  & 0xff)
             bytes[index++] = UInt8(h       & 0xff)
         }
-
-        return NSData(bytes: bytes).base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+        return NSData(bytes: bytes)
     }
 }
 
@@ -81,7 +84,6 @@ private struct Message {
         self.bytes = Array(string.utf8)
         let messageLength = UInt64(self.bytes.count * 8)
 
-        // Pre-processing
         self.bytes += [0x80]
         let size = 56 - (self.bytes.count % 64)
         self.bytes += Array<UInt8>(count: size < 0 ? size + 64 : size, repeatedValue: 0)
