@@ -10,26 +10,14 @@ import Foundation
 
 public class Crypto {
     public static func sha1(message: String) -> String {
-        var message: [UInt8] = Array(message.utf8)
-        let messageLength = UInt64(message.count * 8)
         var hashes: [UInt32] = [0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0]
 
-        // Pre-processing
-        message += [0x80]
-        let size = 56 - (message.count % 64)
-        message += Array<UInt8>(count: size < 0 ? size + 64 : size, repeatedValue: 0)
-        message += messageLength.bytes()
-
         // Process the message in successive 512-bit chunks:
-        var index = 0
-        while index < message.count {
+        for chunk in Message(message).chunks {
+            // break chunk into sixteen 32-bit big-endian words
             var w = Array<UInt32>(count: 80, repeatedValue: 0)
             for var i = 0; i < 16; i++ {
-                let hoge = index + i * 4
-                w[i] += UInt32(message[hoge])     << 24
-                w[i] += UInt32(message[hoge + 1]) << 16
-                w[i] += UInt32(message[hoge + 2]) << 8
-                w[i] += UInt32(message[hoge + 3])
+                w[i] = chunk[uint32: i]
             }
 
             // Extend the sixteen 32-bit words into eighty 32-bit words:
@@ -70,12 +58,10 @@ public class Crypto {
             hashes[2] = hashes[2] &+ c
             hashes[3] = hashes[3] &+ d
             hashes[4] = hashes[4] &+ e
-
-            index += 64
         }
 
         // Produce the final hash value (big-endian) as a 160 bit number:
-        index = 0
+        var index = 0
         var bytes = Array<UInt8>(count: 20, repeatedValue: 0)
         for h in hashes {
             bytes[index++] = UInt8(h >> 24 & 0xff)
@@ -85,6 +71,45 @@ public class Crypto {
         }
 
         return NSData(bytes: bytes).base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+    }
+}
+
+private struct Message {
+    private var bytes: [UInt8]
+
+    init(_ string: String) {
+        self.bytes = Array(string.utf8)
+        let messageLength = UInt64(self.bytes.count * 8)
+
+        // Pre-processing
+        self.bytes += [0x80]
+        let size = 56 - (self.bytes.count % 64)
+        self.bytes += Array<UInt8>(count: size < 0 ? size + 64 : size, repeatedValue: 0)
+        self.bytes += messageLength.bytes()
+    }
+
+    private var chunks: AnyGenerator<Chunk> {
+        var s = 0
+        return anyGenerator { () -> Chunk? in
+            if s >= self.bytes.count { return nil }
+            let (start, end) = (s, s + 64)
+            s = end
+            return Chunk(bytes: Array(self.bytes[start..<end]))
+        }
+    }
+}
+
+private struct Chunk {
+    private let bytes: [UInt8]  // 64byte = 512bit
+
+    private subscript(uint32 index: Int) -> UInt32 {
+        let i = index * 4
+        var value: UInt32 = 0
+        value += UInt32(self.bytes[i])     << 24
+        value += UInt32(self.bytes[i + 1]) << 16
+        value += UInt32(self.bytes[i + 2]) << 8
+        value += UInt32(self.bytes[i + 3])
+        return value
     }
 }
 
