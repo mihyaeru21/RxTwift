@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* OAuthSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* OAuthSpec.swift */; };
 		B2A5D9067E8104368B63D99D /* Pods_RxTwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A46731036D49DFAE1525E5 /* Pods_RxTwift_Example.framework */; };
+		F17594271C952992009C19A3 /* CryptoSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17594261C952992009C19A3 /* CryptoSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		D6A31A22D7016A963CC409C5 /* RxTwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = RxTwift.podspec; path = ../RxTwift.podspec; sourceTree = "<group>"; };
 		E0353A126EDE18E0BA7F418D /* Pods_RxTwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53142106E90A47163250072 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		F17594261C952992009C19A3 /* CryptoSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CryptoSpec.swift; sourceTree = "<group>"; };
 		F89579655BD42C4882030F00 /* Pods-RxTwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxTwift_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxTwift_Tests/Pods-RxTwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,8 +117,9 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* OAuthSpec.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
+				F17594261C952992009C19A3 /* CryptoSpec.swift */,
+				607FACEB1AFB9204008FA782 /* OAuthSpec.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F17594271C952992009C19A3 /* CryptoSpec.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* OAuthSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
