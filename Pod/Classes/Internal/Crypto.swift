@@ -8,7 +8,28 @@
 
 import Foundation
 
+private let blockSize = 64 // 512bit
+private let opad = Array<UInt8>(count: blockSize, repeatedValue: 0x5c)
+private let ipad = Array<UInt8>(count: blockSize, repeatedValue: 0x36)
+
 public class Crypto {
+    public static func hmacSha1(key key: String, message: String) -> String {
+        let hmac = hmacSha1(key: key.utf8Array, message: message.utf8Array)
+        return NSData(bytes: hmac).base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+    }
+
+    public static func hmacSha1(key key: [UInt8], message: [UInt8]) -> [UInt8] {
+        var key = key
+        if key.count > blockSize {
+            key = sha1(key)
+        }
+        if key.count < blockSize {
+            key += Array<UInt8>(count: blockSize - key.count, repeatedValue: 0)
+        }
+
+        return sha1((key^opad) + sha1((key^ipad) + message))
+    }
+
     public static func sha1(message: [UInt8]) -> [UInt8] {
         var hash = Hash()
         for chunk in Message(message).chunks {
@@ -85,8 +106,8 @@ private struct Message {
         let messageLength = UInt64(self.bytes.count * 8)
 
         self.bytes += [0x80]
-        let size = 56 - (self.bytes.count % 64)
-        self.bytes += Array<UInt8>(count: size < 0 ? size + 64 : size, repeatedValue: 0)
+        let size = 56 - (self.bytes.count % blockSize)
+        self.bytes += Array<UInt8>(count: size < 0 ? size + blockSize : size, repeatedValue: 0)
         self.bytes += messageLength.bytes()
     }
 
@@ -94,7 +115,7 @@ private struct Message {
         var s = 0
         return anyGenerator { () -> Chunk? in
             if s >= self.bytes.count { return nil }
-            let (start, end) = (s, s + 64)
+            let (start, end) = (s, s + blockSize)
             s = end
             return Chunk(bytes: Array(self.bytes[start..<end]))
         }
@@ -120,4 +141,19 @@ private extension UInt32 {
     private func rotateLeft(n: UInt32) -> UInt32 {
         return (self << n) | (self >> (32 - n))
     }
+}
+
+private extension String {
+    private var utf8Array: [UInt8] {
+        return Array(self.utf8)
+    }
+}
+
+// only works when left.count == right.count
+private func ^ (left: [UInt8], right: [UInt8]) -> [UInt8] {
+    var result = Array<UInt8>(count: left.count, repeatedValue: 0)
+    for i in 0..<left.count {
+        result[i] = left[i] ^ right[i]
+    }
+    return result
 }
