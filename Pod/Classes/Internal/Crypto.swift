@@ -111,7 +111,7 @@ private struct Message {
         self.bytes += [0x80]
         let size = 56 - (self.bytes.count % blockSize)
         self.bytes += Array<UInt8>(count: size < 0 ? size + blockSize : size, repeatedValue: 0)
-        self.bytes += messageLength.bytes()
+        self.bytes += messageLength.bytes
     }
 
     private var chunks: AnyGenerator<Chunk> {
@@ -140,11 +140,21 @@ private struct Chunk {
 }
 
 private func toBase64(bytes: [UInt8]) -> String {
-    return NSData(bytes: bytes).base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+    return NSData(bytes: bytes, length: bytes.count).base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
 }
 
-// only works when n < 32
+private extension UInt64 {
+    private var bytes: [UInt8] {
+        var bytes = Array<UInt8>(count: 8, repeatedValue: 0)
+        for i in 0...7 {
+            bytes[7 - i] = UInt8(self >> (8 * UInt64(i)) & 0xff)
+        }
+        return bytes
+    }
+}
+
 private extension UInt32 {
+    // only works when n < 32
     private func rotateLeft(n: UInt32) -> UInt32 {
         return (self << n) | (self >> (32 - n))
     }
