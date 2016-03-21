@@ -1,13 +1,11 @@
 PODS:
   - Argo (2.3.0)
-  - CryptoSwift (0.2.3)
   - Curry (1.4.0)
   - Nimble (3.0.0)
   - Quick (0.8.0)
   - RxSwift (2.3.0)
   - RxTwift (0.1.0):
     - Argo (~> 2.2)
-    - CryptoSwift (~> 0.2)
     - Curry (~> 1.4)
     - RxSwift (~> 2.0)
 
@@ -22,11 +20,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Argo: 3dbecf4204b1a3cdd1df88ebd5e23d01b652d34b
-  CryptoSwift: b2bf37b8e7cc6d682ef3365cb966bc5ae5174aa5
   Curry: 294533187eedbf52db60a1e70c29b4f5c9f621c0
   Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
   Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
   RxSwift: 0df59cc5edf28a31dbf83b049220b4b8e76b07c8
-  RxTwift: 6824499d8a348f98077cd295b3d82a28451c51a0
+  RxTwift: fb48db9f952a0c734a93b182b2982ec3f96b8c2c
 
 COCOAPODS: 0.39.0
