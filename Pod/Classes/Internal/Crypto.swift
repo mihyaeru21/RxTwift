@@ -65,7 +65,7 @@ public class Crypto {
                 (a, b, c, d, e) = (temp, a, b.rotateLeft(30), c, d)
             }
 
-            hash.add((a, b, c, d, e))
+            hash.add([a, b, c, d, e])
         }
 
         return hash.result
@@ -79,12 +79,10 @@ private struct Hash {
         return (self.hashes[0], self.hashes[1], self.hashes[2], self.hashes[3], self.hashes[4])
     }
 
-    private mutating func add(values: (UInt32, UInt32, UInt32, UInt32, UInt32)) {
-        self.hashes[0] = self.hashes[0] &+ values.0
-        self.hashes[1] = self.hashes[1] &+ values.1
-        self.hashes[2] = self.hashes[2] &+ values.2
-        self.hashes[3] = self.hashes[3] &+ values.3
-        self.hashes[4] = self.hashes[4] &+ values.4
+    private mutating func add(values: [UInt32]) {
+        for i in 0...4 {
+            self.hashes[i] = self.hashes[i] &+ values[i]
+        }
     }
 
     // 160 bit number
