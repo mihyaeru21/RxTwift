@@ -14,8 +14,11 @@ private let ipad = Array<UInt8>(count: blockSize, repeatedValue: 0x36)
 
 public class Crypto {
     public static func hmacSha1(key key: String, message: String) -> String {
-        let hmac = hmacSha1(key: key.utf8Array, message: message.utf8Array)
-        return NSData(bytes: hmac).base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+        return toBase64(hmacSha1(key: key.utf8Array, message: message.utf8Array))
+    }
+
+    public static func sha1(message: String) -> String {
+        return toBase64(Crypto.sha1(message.utf8Array))
     }
 
     public static func hmacSha1(key key: [UInt8], message: [UInt8]) -> [UInt8] {
@@ -134,6 +137,10 @@ private struct Chunk {
         value += UInt32(self.bytes[i + 3])
         return value
     }
+}
+
+private func toBase64(bytes: [UInt8]) -> String {
+    return NSData(bytes: bytes).base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
 }
 
 // only works when n < 32
