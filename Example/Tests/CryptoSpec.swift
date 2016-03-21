@@ -17,14 +17,34 @@ class CryptoSpec: QuickSpec {
                 expect(Crypto.sha1("")) == "2jmj7l5rSw0yVb/vlWAYkK/YBwk="
             }
 
-            it("hoge") {
-                let hash = Crypto.sha1("The quick brown fox jumps over the lazy dog")
-                expect(hash) == "L9ThxnotKPzthJ7hu3bnORuT6xI="
+            it("example") {
+                expect(Crypto.sha1("The quick brown fox jumps over the lazy dog")) == "L9ThxnotKPzthJ7hu3bnORuT6xI="
+                expect(Crypto.sha1("The quick brown fox jumps over the lazy cog")) == "3p8sf9JeGzr60+haC9F9mxANtLM="
             }
 
-            it("fuga") {
-                let hash = Crypto.sha1("The quick brown fox jumps over the lazy cog")
-                expect(hash) == "3p8sf9JeGzr60+haC9F9mxANtLM="
+            it("long message") {
+                let message = "Test Using Larger Than Block-Size Key and Larger Than One Block-Size Data"
+                expect(Crypto.sha1(message)) == "trL9zWiHQGvVWtLlwZ4IzPX0ikU="
+            }
+
+            context("border") {
+                it("message.count == blockSize") {
+                    let message = String(count: 54, repeatedValue: "a" as Character)
+                    expect(Array(message.utf8Array).count) == 54
+                    expect(Crypto.sha1(message)) == "sF1xxkl5y5X6dKM82zGkDSWK4C4="
+                }
+
+                it("message.count == blockSize-1") {
+                    let message = String(count: 55, repeatedValue: "a" as Character)
+                    expect(Array(message.utf8Array).count) == 55
+                    expect(Crypto.sha1(message)) == "wci73CJ5bijA4VFj0giZtlYh1lo="
+                }
+
+                it("message.count == blockSize-1") {
+                    let message = String(count: 56, repeatedValue: "a" as Character)
+                    expect(Array(message.utf8Array).count) == 56
+                    expect(Crypto.sha1(message)) == "wtszD2CDhUyZ1LW/tujynyAb5pk="
+                }
             }
         }
 
