@@ -4,7 +4,6 @@
 
 import Foundation
 import RxSwift
-import CryptoSwift
 
 public class OAuth {
     public struct HeaderElement {
@@ -67,7 +66,6 @@ public class OAuth {
     }
 
     private func createSignature(base: String, key: String) -> String? {
-        let signature = try! Authenticator.HMAC(key: Array(key.utf8), variant: .sha1).authenticate(Array(base.utf8))
-        return NSData(bytes: signature).base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0)).percentEncodedForOAuth
+        return Crypto.hmacSha1(key: key, message: base).percentEncodedForOAuth
     }
 }
