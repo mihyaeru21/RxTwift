@@ -9,7 +9,7 @@
 import Foundation
 
 public class Crypto {
-    public static func sha1(message: String) -> String {
+    public static func sha1(message: [UInt8]) -> [UInt8] {
         var hash = Hash()
         for chunk in Message(message).chunks {
             var w = Array<UInt32>(count: 80, repeatedValue: 0)
@@ -44,7 +44,7 @@ public class Crypto {
             hash.add((a, b, c, d, e))
         }
 
-        return hash.result.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+        return hash.result
     }
 }
 
@@ -64,7 +64,7 @@ private struct Hash {
     }
 
     // 160 bit number
-    private var result: NSData {
+    private var result: [UInt8] {
         var index = 0
         var bytes = Array<UInt8>(count: 20, repeatedValue: 0)
         for h in self.hashes {
@@ -73,15 +73,15 @@ private struct Hash {
             bytes[index++] = UInt8(h >> 8  & 0xff)
             bytes[index++] = UInt8(h       & 0xff)
         }
-        return NSData(bytes: bytes)
+        return bytes
     }
 }
 
 private struct Message {
     private var bytes: [UInt8]
 
-    init(_ string: String) {
-        self.bytes = Array(string.utf8)
+    init(_ bytes: [UInt8]) {
+        self.bytes = bytes
         let messageLength = UInt64(self.bytes.count * 8)
 
         self.bytes += [0x80]
