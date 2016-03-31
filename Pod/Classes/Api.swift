@@ -52,4 +52,5 @@ public class PostApi {
     }
 
     public lazy var statuses: PostStatusesApi = PostStatusesApi(client: self.client)
+    public lazy var lists:    PostListsApi = PostListsApi(client: self.client)
 }

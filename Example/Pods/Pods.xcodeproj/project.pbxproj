@@ -183,6 +183,7 @@
 		A49AA25DD687F69233369274191AA941 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDE0F7D1400D6D69F8D12F79154B387 /* String+Extension.swift */; };
 		A4F5CF67EDE9200033BD16DB921D1637 /* AnonymousInvocable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE1ABA045051D0398A99676EE766C09 /* AnonymousInvocable.swift */; };
 		A518A8B7F60C103E83E80621F56CF883 /* StandardTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49441F13BE38BF11ABC0FEC363FC1BD1 /* StandardTypes.swift */; };
+		A59D2C8C8565AB533C8022F0 /* PostListsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59D21E6C2771C468BAFD722 /* PostListsApi.swift */; };
 		A59E7D9C66C95566A167899224DA26EE /* QuickConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 86700F5445BB99A868DE6A81ABA45140 /* QuickConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A8F62127387B7BF30BA18A4C07BBC93E /* HistoricalSchedulerTimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8688CD8155B81FABE04F7C5E648C92DC /* HistoricalSchedulerTimeConverter.swift */; };
 		AA122C1330E4D575A38DCA3B8E56E3B7 /* Skip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D037FBE6951D04B8CEDB7ECA465157 /* Skip.swift */; };
@@ -612,6 +613,7 @@
 		A3E1A7B1A8C58FAC22EF098FA22962DA /* RxTwift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "RxTwift-dummy.m"; sourceTree = "<group>"; };
 		A3F554EFD4CDA5DD204A94118484E0D0 /* Pods-RxTwift_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RxTwift_Example-dummy.m"; sourceTree = "<group>"; };
 		A544FBA1D9320C7C32ACD9B857C62CD5 /* List.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		A59D21E6C2771C468BAFD722 /* PostListsApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostListsApi.swift; sourceTree = "<group>"; };
 		A60065A5271B3A65813FE35ADA6F2F4D /* Pods_RxTwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxTwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D0D29CDC6781D86D8F06C38F66D610 /* StableCompositeDisposable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StableCompositeDisposable.swift; path = RxSwift/Disposables/StableCompositeDisposable.swift; sourceTree = "<group>"; };
 		A75DEBD61B3F98EC1A659453281CD7D9 /* ExampleGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleGroup.swift; path = Quick/ExampleGroup.swift; sourceTree = "<group>"; };
@@ -879,6 +881,7 @@
 				6EBBCF2F35CA225133D5B04182110993 /* Request.swift */,
 				61D987F631A9CF09721B92FFD9EFF41C /* Internal */,
 				7ECFAEA0F3FB8CF502C34D6DEB2C815B /* Objects */,
+				A59D21E6C2771C468BAFD722 /* PostListsApi.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1909,6 +1912,7 @@
 				C34AA0357954573AEFDB0CACE7AA8099 /* UserEntities.swift in Sources */,
 				EC99381D35BB11008695C437E00243C2 /* UserMention.swift in Sources */,
 				58C9C03EA84AAB555D98AC6CA799C6A3 /* Users.swift in Sources */,
+				A59D2C8C8565AB533C8022F0 /* PostListsApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
